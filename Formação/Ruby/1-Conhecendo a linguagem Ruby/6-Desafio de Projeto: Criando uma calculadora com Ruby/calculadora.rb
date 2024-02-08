@@ -28,6 +28,6 @@ loop do
     elsif option == 0
       break
     else
-      puts "Opcão inválida!"
+      puts "Opcão inválida!
     end
 end

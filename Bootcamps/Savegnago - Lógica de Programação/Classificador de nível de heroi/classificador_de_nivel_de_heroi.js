@@ -16,12 +16,13 @@ function criarMensagem(nome, categoria = 'Ferro') {
     { nivel: Infinity, categoria: 'Radiante' }
   ];
 
-  ranking.forEach(item => {
+  for (let i = 0; i < ranking.length; i++) {
+    const item = ranking[i];
     if (experiencia <= item.nivel) {
       callback(nome, item.categoria);
-      return;
+      break;
     }
-  });
+  }
 }
 
 function dadosDoHeroi(callback) {

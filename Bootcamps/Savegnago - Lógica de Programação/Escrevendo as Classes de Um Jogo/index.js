@@ -39,4 +39,6 @@ ninja.atacar();
 const monge = new Heroi('Shaolin', 25, 'monge');
 monge.atacar();
 
+const cavaleiroJedi = new Heroi('Yoda', 950, 'Jedi');
+cavaleiroJedi.atacar();
 

@@ -1,2 +1,3 @@
 # Ignorar pastas node_modules em qualquer subdiretório
-**/node_modules/
+node_modules
+.env

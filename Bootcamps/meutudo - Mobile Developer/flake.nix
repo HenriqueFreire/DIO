@@ -1,5 +1,5 @@
 {
-  description = "ecommerce";
+  description = "meutudo";
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
@@ -22,7 +22,7 @@
       androidComposition = pkgs.androidenv.composeAndroidPackages {
         cmdLineToolsVersion = "8.0";
         toolsVersion = "26.1.1";
-        platformToolsVersion = "34.0.4";
+        platformToolsVersion = "34.0.5";
         buildToolsVersions = [ buildToolsVersion "33.0.1" ];
         includeEmulator = false;
         emulatorVersion = "30.3.4";
@@ -45,6 +45,7 @@
     {
       devShell = pkgs.mkShell rec {
         buildInputs = with pkgs; [
+          nodejs_20
           # Android
           pinnedJDK
           sdk

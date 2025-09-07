@@ -1,0 +1,5 @@
+# Ambiente virtual
+.dev/
+
+# Arquivos gerados
+**/training_history.png

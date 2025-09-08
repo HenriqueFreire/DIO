@@ -20,11 +20,19 @@ O dataset utilizado é o `cats_vs_dogs`, disponibilizado pelo TensorFlow Dataset
 - TensorFlow Datasets
 - Matplotlib
 
-## Como Executar
+## Como Executar Localmente
 
 1. Clone o repositório.
 2. Instale as dependências: `pip install -r requirements.txt`
 3. Execute o script de treinamento: `python transfer_learning.py`
+
+## Como Executar no Google Colab
+
+Você pode executar este projeto diretamente no Google Colab clicando no badge abaixo:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/HenriqueFreire/DIO/blob/main/Bootcamps/BairesDev%20-%20Machine%20Learning%20Training/Treinamento%20de%20Redes%20Neurais%20com%20Transfer%20Learning/transfer_learning_colab.ipynb)
+
+Ao abrir o notebook no Colab, certifique-se de que o ambiente de execução (Runtime) esteja configurado para usar GPU, se disponível, para um treinamento mais rápido.
 
 ## Escolhendo Outro Modelo
 

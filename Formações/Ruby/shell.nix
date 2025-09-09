@@ -7,7 +7,9 @@
 pkgs.mkShell {
   # Dependências do ambiente
   buildInputs = with pkgs; [
-    ruby
+    ruby_3_2
+    libyaml
+    rubyPackages_3_2.railties
   ];
 
   # Hook opcional ao entrar no shell

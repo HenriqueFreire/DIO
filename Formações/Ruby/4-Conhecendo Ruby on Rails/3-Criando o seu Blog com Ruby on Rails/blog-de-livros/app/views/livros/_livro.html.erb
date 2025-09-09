@@ -1,0 +1,33 @@
+<div class="livro">
+  <p>
+    <strong>Título:</strong>
+    <%= livro.titulo %>
+  </p>
+
+  <p>
+    <% if livro.url.present? %>
+      <%= image_tag livro.url, size: "100x150" %>
+    <% else %>
+      <!-- Optionally display a placeholder or nothing if no image -->
+    <% end %>
+  </p>
+
+  <p>
+    <strong>Autor:</strong>
+    <%= livro.autor %>
+  </p>
+
+  <p>
+    <strong>Nota:</strong>
+    <%= livro.nota %>
+  </p>
+
+  <p>
+    <strong>Descrição:</strong>
+    <%= livro.descricao %>
+  </p>
+
+  <p>
+    <%= link_to "Mostrar este livro", livro, class: "btn btn-primary" %>
+  </p>
+</div>

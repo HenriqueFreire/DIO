@@ -1,0 +1,16 @@
+pt-BR:
+  activerecord:
+    models:
+      livro: "Livro"
+    attributes:
+      livro:
+        titulo: "Título"
+        autor: "Autor"
+        nota: "Nota"
+        descricao: "Descrição"
+        url: "URL da Imagem"
+  helpers:
+    submit:
+      livro:
+        create: "Criar Livro"
+        update: "Atualizar Livro"

@@ -1,0 +1,42 @@
+<%= form_with(model: livro, class: "livro-form") do |form| %>
+  <% if livro.errors.any? %>
+    <div class="errors-container">
+      <h2><%= pluralize(livro.errors.count, "erro") %> impediram que este livro fosse salvo:</h2>
+
+      <ul>
+        <% livro.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-field">
+    <%= form.label :titulo %>
+    <%= form.text_field :titulo %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :autor %>
+    <%= form.text_field :autor %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :nota %>
+    <%= form.number_field :nota %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :descricao %>
+    <%= form.text_area :descricao %>
+  </div>
+
+  <div class="form-field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="form-actions">
+    <%= form.submit %>
+  </div>
+<% end %>

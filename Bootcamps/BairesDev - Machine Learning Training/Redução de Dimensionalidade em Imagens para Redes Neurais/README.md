@@ -54,3 +54,15 @@ Após a execução, dois novos arquivos serão criados no diretório `images`:
 ├── requirements.txt      # Lista de dependências Python (Pillow).
 └── shell.nix             # Definição do ambiente de desenvolvimento Nix.
 ```
+
+## Executando no Google Colab
+
+Para uma alternativa que não requer instalação local, você pode usar o notebook do Google Colab.
+
+1.  **Acesse o Google Colab:** [https://colab.research.google.com/](https://colab.research.google.com/)
+2.  **Carregue o Notebook:**
+    -   Vá em `File > Upload notebook`.
+    -   Selecione o arquivo `dimensionality_reduction_colab.ipynb` deste projeto.
+3.  **Execute as Células:** Siga as instruções contidas no notebook para instalar as dependências, fazer o upload de uma imagem e visualizar os resultados.
+
+**Nota sobre Aceleração por Hardware (GPU/TPU):** Este projeto realiza manipulação de imagem em nível de pixel usando Python puro e não envolve treinamento de modelos de deep learning. Portanto, o uso de um acelerador de hardware como GPU ou TPU não trará benefícios de performance. A execução pode ser feita em um ambiente de CPU padrão.

@@ -1,5 +1,14 @@
-# Ambiente virtual
+# Python
 .dev/
+__pycache__/
+*.pyc
 
-# Arquivos gerados
-**/training_history.png
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Ultralytics
+runs/
+datasets/
+
+# Project specific
+results.jpg

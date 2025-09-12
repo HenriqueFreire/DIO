@@ -1,0 +1,12 @@
+import os
+from train import train_model
+from detect import detect_objects
+
+def clear_screen():
+    """Limpa o terminal."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def main_menu():    """Exibe o menu principal e gerencia as ações do usuário."""    last_model_path = None    while True:        clear_screen()        print("===== Menu Principal - Projeto YOLO =====")        print("\nEscolha uma opção:")        print("  1. Treinar Modelo")        print("  2. Detectar Objetos em uma Imagem")        print("  3. Sair")        choice = input("\nDigite o número da sua escolha: ")        if choice == '1':            print("\nIniciando o treinamento do modelo...")            try:                save_dir = train_model()                last_model_path = os.path.join(save_dir, 'weights', 'best.pt')                print(f"\nModelo treinado salvo em: {last_model_path}")                input("\nTreinamento concluído. Pressione Enter para continuar...")            except Exception as e:                input(f"Ocorreu um erro durante o treinamento: {e}\nPressione Enter para continuar...")        elif choice == '2':            print("\nIniciando a detecção de objetos...")            model_path_input = ""            if last_model_path:                model_path_input = input(f"Digite o caminho para o modelo treinado (pressione Enter para usar o último: {last_model_path}): ")                if not model_path_input:                    model_path_input = last_model_path            else:                model_path_input = input("Digite o caminho para o modelo treinado (ex: data/training_results/weights/best.pt): ")            image_path = input("Digite o caminho para a imagem que deseja analisar: ")            if not os.path.exists(model_path_input):                input(f"Erro: O arquivo do modelo não foi encontrado em '{model_path_input}'.\nPressione Enter para voltar ao menu.")                continue            if not os.path.exists(image_path):                input(f"Erro: O arquivo de imagem não foi encontrado em '{image_path}'.\nPressione Enter para voltar ao menu.")                continue            detect_objects(model_path_input, image_path)            input("\nDetecção concluída. Pressione Enter para continuar...")        elif choice == '3':            print("Saindo do programa. Até mais!")            break        else:            input("Opção inválida. Pressione Enter para tentar novamente.")
+
+if __name__ == "__main__":
+    main_menu()

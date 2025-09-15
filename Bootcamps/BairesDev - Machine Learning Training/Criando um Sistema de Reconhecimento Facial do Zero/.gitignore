@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.log
+.env
+venv/
+
+# Nix
+result/
+*.nix.swp
+
+# Output do Projeto
+output/
+
+# Dados de Treino (a pedido do usuário)
+data/*/
+
+# Sistema Operacional
+.DS_Store
+*.tmp
+*.bak

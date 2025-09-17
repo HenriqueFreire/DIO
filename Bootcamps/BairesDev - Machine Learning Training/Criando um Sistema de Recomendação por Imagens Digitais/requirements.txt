@@ -1,0 +1,5 @@
+numpy
+tensorflow
+Pillow
+scikit-learn
+keras

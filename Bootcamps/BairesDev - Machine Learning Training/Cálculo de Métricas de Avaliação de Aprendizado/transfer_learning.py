@@ -1,4 +1,5 @@
 import tensorflow as tf
+tf.config.set_visible_devices([], 'GPU')
 import tensorflow_datasets as tfds
 import matplotlib.pyplot as plt
 from custom_callbacks import MetricsCallback

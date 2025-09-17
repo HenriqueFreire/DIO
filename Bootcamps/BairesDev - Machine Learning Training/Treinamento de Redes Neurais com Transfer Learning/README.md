@@ -26,12 +26,7 @@ O dataset utilizado é o `cats_vs_dogs`, disponibilizado pelo TensorFlow Dataset
 2. Instale as dependências: `pip install -r requirements.txt`
 3. Execute o script de treinamento: `python transfer_learning.py`
 
-## Suporte a TPU e Aceleração por Hardware
 
-O notebook `transfer_learning_colab.ipynb` foi otimizado para tirar proveito de aceleradores de hardware como GPUs e TPUs, disponíveis gratuitamente no Google Colab.
-
-- **Detecção Automática:** O notebook detecta automaticamente a presença de uma GPU ou TPU e a utiliza para acelerar o treinamento e a inferência.
-- **Treinamento com TPU:** Para usar uma TPU, basta selecionar `TPU` como acelerador de hardware no ambiente de execução do Colab. O código se encarregará de distribuir o trabalho para a TPU.
 
 ## Como Executar no Google Colab
 
@@ -41,10 +36,7 @@ Você pode executar este projeto diretamente no Google Colab.
 2.  **Carregue o Notebook:**
     -   Vá em `File > Upload notebook`.
     -   Selecione o arquivo `transfer_learning_colab.ipynb` deste projeto.
-3.  **Ative o Acelerador de Hardware (TPU):**
-    -   No menu, vá em `Runtime > Change runtime type`.
-    -   Selecione `TPU` como `Hardware accelerator` e clique em `Save`.
-4.  **Execute as Células:** Execute as células do notebook em ordem para treinar e avaliar o modelo.
+3.  **Execute as Células:** Execute as células do notebook em ordem para treinar e avaliar o modelo.
 
 ## Escolhendo Outro Modelo
 

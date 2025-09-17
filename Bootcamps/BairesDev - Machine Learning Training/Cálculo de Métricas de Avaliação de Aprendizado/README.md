@@ -4,7 +4,7 @@ Este projeto demonstra como calcular e monitorar um conjunto detalhado de métri
 
 O projeto está disponível em duas versões:
 1.  **Scripts Python:** Uma coleção de scripts Python (`.py`) para execução em um ambiente local, utilizando CPU.
-2.  **Jupyter Notebook:** Um notebook (`.ipynb`) otimizado para execução em ambientes como o Google Colab, com suporte para **CPU, GPU e TPU**.
+2.  **Jupyter Notebook:** Um notebook (`.ipynb`) otimizado para execução em ambientes como o Google Colab, utilizando CPU.
 
 ## Métricas Calculadas
 
@@ -25,14 +25,7 @@ Para cada época de treinamento, são calculadas e exibidas as seguintes métric
 -   `requirements.txt`: Lista as dependências Python.
 -   `shell.nix`: Arquivo de configuração para o ambiente de desenvolvimento Nix.
 
-## Suporte a TPU
 
-O notebook `analise_de_metricas.ipynb` já vem com o código necessário para detectar e utilizar TPUs (Tensor Processing Units) automaticamente. Ao executar no Google Colab com o ambiente de execução configurado para TPU, o script irá:
-1. Detectar a presença de uma TPU.
-2. Inicializar o sistema de TPU.
-3. Criar uma `tf.distribute.TPUStrategy` para distribuir o treinamento entre os núcleos da TPU.
-
-Isso acelera significativamente o processo de treinamento do modelo.
 
 ## Executando no Google Colab (Recomendado)
 
@@ -42,9 +35,9 @@ A maneira mais simples de executar o projeto é usando o notebook no Google Cola
 2.  **Carregue o Notebook:**
     -   Vá em `File > Upload notebook`.
     -   Selecione o arquivo `analise_de_metricas.ipynb` deste projeto.
-3.  **Ative o Acelerador de Hardware (TPU):**
+3.  **Configurar o Ambiente de Execução:**
     -   No menu, vá em `Runtime > Change runtime type`.
-    -   Selecione `TPU` como `Hardware accelerator` e clique em `Save`. O código se adaptará automaticamente.
+    -   Selecione `None` como `Hardware accelerator` e clique em `Save`.
 4.  **Execute o Código:**
     -   Execute as células do notebook em ordem. A primeira célula de código instalará as dependências e a segunda configurará a estratégia de treinamento para o hardware selecionado.
 

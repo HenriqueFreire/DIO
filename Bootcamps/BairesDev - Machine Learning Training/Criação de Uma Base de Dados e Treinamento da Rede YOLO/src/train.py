@@ -27,7 +27,7 @@ def train_model():
 
     # Ajustado para CPU: imgsz=320 para um treinamento mais rápido.
     # Usando o nosso .yaml customizado e focando nas classes 2 (car) e 3 (motorcycle).
-    results = model.train(data='desafio-coco.yaml', epochs=3, imgsz=320, classes=[2, 3], project='../data', name='training_results')
+    results = model.train(data='desafio-coco.yaml', epochs=3, imgsz=320, classes=[2, 3], project='../data', name='training_results', device='cpu')
 
     print("\n---------------------------------")
     print("✅ Treinamento concluído com sucesso!")

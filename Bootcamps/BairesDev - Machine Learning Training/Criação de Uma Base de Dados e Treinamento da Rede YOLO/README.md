@@ -56,12 +56,7 @@ python src/main.py
 3. Forneça o caminho para a imagem que deseja analisar.
 4. A imagem com as detecções será exibida e salva como `results.jpg`.
 
-## Suporte a TPU e Aceleração por Hardware
 
-O notebook `notebooks/colab_notebook.ipynb` foi otimizado para tirar proveito de aceleradores de hardware como GPUs e TPUs, disponíveis gratuitamente no Google Colab.
-
-- **Detecção Automática:** O notebook detecta automaticamente a presença de uma GPU ou TPU e a utiliza para acelerar o treinamento e a inferência.
-- **Treinamento com TPU:** Para usar uma TPU, basta selecionar `TPU` como acelerador de hardware no ambiente de execução do Colab. O código se encarregará de distribuir o trabalho para a TPU.
 
 ## Google Colab
 
@@ -71,9 +66,9 @@ Para uma alternativa que não requer instalação local, você pode usar o noteb
 2.  **Carregue o Notebook:**
     -   Vá em `File > Upload notebook`.
     -   Selecione o arquivo `notebooks/colab_notebook.ipynb` deste projeto.
-3.  **Ative o Acelerador de Hardware (TPU):**
+3.  **Configurar o Ambiente de Execução:**
     -   No menu, vá em `Runtime > Change runtime type`.
-    -   Selecione `TPU` como `Hardware accelerator` e clique em `Save`.
+    -   Selecione `None` como `Hardware accelerator` e clique em `Save`.
 4.  **Execute as Células:** Siga as instruções contidas no notebook para instalar as dependências, treinar o modelo e realizar a detecção.
 
 ## Estrutura do Projeto
@@ -105,7 +100,7 @@ Este projeto oferece duas maneiras de interagir com o modelo YOLOv8, cada uma co
 
 ### Versão Jupyter Notebook (`notebooks/colab_notebook.ipynb`)
 
--   **Ambiente:** Otimizado para o Google Colab, um ambiente de notebook baseado em nuvem que fornece acesso gratuito a GPUs.
+-   **Ambiente:** Otimizado para o Google Colab, um ambiente de notebook baseado em nuvem.
 -   **Interação:** O código é organizado em células que podem ser executadas sequencialmente. É ideal para experimentação e visualização passo a passo.
 -   **Configuração:** Nenhuma instalação local é necessária. As dependências e os modelos pré-treinados são baixados e configurados automaticamente no ambiente do Colab.
 -   **Armazenamento:** Os arquivos gerados (datasets, pesos, imagens de resultado) são salvos no armazenamento temporário do Colab e serão perdidos quando a sessão for encerrada. É necessário baixar os arquivos manualmente se você quiser mantê-los.

@@ -1,0 +1,163 @@
+<mxfile host="app.diagrams.net" modified="2023-10-26T10:00:00.000Z" agent="Mozilla/5.0" etag="some-etag" version="22.0.8" type="browser">
+  <diagram id="diagram-id" name="Page-1">
+    <mxGraphModel dx="1434" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageEnabled="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- AWS Cloud Boundary -->
+        <mxCell id="aws-cloud" value="AWS Cloud" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="800" height="700" as="geometry" />
+        </mxCell>
+
+        <!-- New: User/Admin Upload -->
+        <mxCell id="user-upload" value="User/Admin Upload" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="100" y="100" width="30" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- New: S3 Raw Images -->
+        <mxCell id="s3-raw-images" value="S3 Bucket (Raw Images)" style="shape=mxgraph.aws3.s3;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;fillColor=#F05C11;fontColor=#ffffff;strokeColor=#B02B00;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="200" y="100" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- New: Lambda Image Processor -->
+        <mxCell id="lambda-image-processor" value="AWS Lambda (Image Processor)" style="shape=mxgraph.aws3.lambda;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;fillColor=#F05C11;fontColor=#ffffff;strokeColor=#B02B00;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="200" y="200" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- New: S3 Processed Images -->
+        <mxCell id="s3-processed-images" value="S3 Bucket (Processed Images)" style="shape=mxgraph.aws3.s3;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;fillColor=#F05C11;fontColor=#ffffff;strokeColor=#B02B00;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="300" y="100" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Existing Components (adjusted positions) -->
+        <mxCell id="storefront" value="StoreFront Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="450" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="warehouse" value="WareHouse Service" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="450" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="postgresql" value="PostgreSQL DB (Data &amp; Image Metadata)" style="shape=cylinder;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="650" y="150" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="rabbitmq" value="RabbitMQ" style="shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="550" y="300" width="80" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Original S3 and Lambda (Reports/Logs) -->
+        <mxCell id="s3-reports" value="AWS S3 (Reports/Logs)" style="shape=mxgraph.aws3.s3;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;fillColor=#F05C11;fontColor=#ffffff;strokeColor=#B02B00;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="700" y="300" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lambda-reports" value="AWS Lambda (Report Processor)" style="shape=mxgraph.aws3.lambda;whiteSpace=wrap;html=1;labelBackgroundColor=#ffffff;fillColor=#F05C11;fontColor=#ffffff;strokeColor=#B02B00;" vertex="1" parent="aws-cloud">
+          <mxGeometry x="700" y="400" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Connections for Image Management -->
+        <mxCell id="conn-upload-s3raw" value="Upload Image" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="aws-cloud" source="user-upload" target="s3-raw-images">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="130" y="130" as="sourcePoint" />
+            <mxPoint x="200" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn-s3raw-lambda" value="S3 Event Trigger" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="aws-cloud" source="s3-raw-images" target="lambda-image-processor">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="225" y="150" as="sourcePoint" />
+            <mxPoint x="225" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn-lambda-s3processed" value="Save Processed Images" style="endArrow=classic;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="aws-cloud" source="lambda-image-processor" target="s3-processed-images">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="225" y="200" as="sourcePoint" />
+            <mxPoint x="325" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="225" y="175" />
+              <mxPoint x="325" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn-lambda-pg-metadata" value="Update Image Metadata" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="aws-cloud" source="lambda-image-processor" target="postgresql">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="250" y="225" as="sourcePoint" />
+            <mxPoint x="650" y="190" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="450" y="225" />
+              <mxPoint x="450" y="190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn-sf-pg-images" value="Get Image URLs" style="endArrow=classic;html=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="aws-cloud" source="storefront" target="postgresql">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="130" as="sourcePoint" />
+            <mxPoint x="650" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="conn-sf-s3processed-serve" value="Serve Images" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="aws-cloud" source="s3-processed-images" target="storefront">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="325" y="150" as="sourcePoint" />
+            <mxPoint x="510" y="100" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="325" y="300" />
+              <mxPoint x="510" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Original Connections (adjusted) -->
+        <mxCell id="conn-sf-pg" value="Reads/Writes Data" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="aws-cloud" source="storefront" target="postgresql">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="130" as="sourcePoint" />
+            <mxPoint x="650" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-wh-pg" value="Reads/Writes Data" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="aws-cloud" source="warehouse" target="postgresql">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="230" as="sourcePoint" />
+            <mxPoint x="650" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-sf-rmq" value="Sends/Receives Messages" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="aws-cloud" source="storefront" target="rabbitmq">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="160" as="sourcePoint" />
+            <mxPoint x="590" y="300" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="510" y="250" />
+              <mxPoint x="590" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn-wh-rmq" value="Sends/Receives Messages" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="aws-cloud" source="warehouse" target="rabbitmq">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="510" y="260" as="sourcePoint" />
+            <mxPoint x="590" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- WareHouse to S3 (generates reports) -->
+        <mxCell id="conn-wh-s3-reports" value="Generates Reports" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="aws-cloud" source="warehouse" target="s3-reports">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="570" y="230" as="sourcePoint" />
+            <mxPoint x="700" y="325" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="635" y="230" />
+              <mxPoint x="635" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- S3 to Lambda (event trigger) -->
+        <mxCell id="conn-s3-lambda-reports" value="S3 Event Trigger" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="aws-cloud" source="s3-reports" target="lambda-reports">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="725" y="350" as="sourcePoint" />
+            <mxPoint x="725" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

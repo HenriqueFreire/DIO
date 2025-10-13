@@ -1,0 +1,1 @@
+import java.io.*;public class CadastroDeClienteLoja{public static void main(String[]a)throws Exception{String s=new BufferedReader(new InputStreamReader(System.in)).readLine();int i=s.indexOf(' ');System.out.println("Cliente "+s.substring(0,i)+" cadastrado com sucesso! Email: "+s.substring(i+1));}}

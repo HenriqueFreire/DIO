@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /warehouse
+spring:
+  application:
+    name: warehouse
+
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+    queue:
+      product-change-availability: product.change.availability.queue
+    exchange:
+      product-change-availability: product.change.availability.exchange
+    routing-key:
+      product-change-availability: product.change.availability.routingkey
+
+storefront:
+  base-path: http://storefrontapp:8081/storefront

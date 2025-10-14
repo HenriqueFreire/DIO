@@ -1,0 +1,57 @@
+# O Lasanheiro Fantasma: A Ruína e a Vingança
+
+**(Página 1: Capa)**
+
+![Capa do E-book](./Images/image-4)
+
+---
+
+**(Página 2: A Vida Antes)**
+
+José Ambrósio da Silva, Zé, não era rico, mas era feliz. Sua vida girava em torno de duas rotinas sagradas: levar Maria Eduarda, sua filha de oito anos e sorriso fácil, para a escola e buscar Helena, sua esposa, que trabalhava em uma fábrica do outro lado da cidade. O Chevette '78, cor de mostarda, surrado mas com o motor sempre na ponta dos cascos graças aos cuidados de Zé, era o elo de suas vidas.
+
+![A Família Feliz](./Images/image-1)
+
+---
+
+**(Página 3: A Tragédia)**
+
+Em uma terça-feira comum, a vida de Zé foi feita em pedaços.
+
+Ele voltava para casa, com Maria Eduarda tagarelando sobre o dever de casa no banco de trás e Helena sorrindo, cansada, ao seu lado. Foi no cruzamento da Avenida das Flores, um local já conhecido pelos excessos de velocidade. Um carro esportivo, um modelo importado, avançou em altíssima velocidade. O motorista estava claramente em um racha ilegal, usando a via pública como pista particular.
+
+O impacto foi um rugido de metal e vidro. O Chevette, por mais que Zé tivesse tentado desviar, foi atingido em cheio.
+
+Quando o silêncio se instalou, cortado apenas pelo gotejar do combustível e o som distante das sirenes, Zé estava preso, mas consciente. Ele gritou pelos nomes de Helena e Maria Eduarda. As equipes de resgate chegaram rapidamente. Maria Eduarda, apesar dos esforços desesperados de paramédicos e bombeiros, morreu no local. Sua pequena mão ainda estava segurando um desenho amassado. Helena estava viva, mas inconsciente, levada às pressas para o hospital.
+
+---
+
+**(Página 4: A Injustiça)**
+
+Zé passou horas na delegacia, mal conseguindo dar seu depoimento. O desespero lhe cortava a voz. Ao final do procedimento, enquanto esperava em um canto, ele viu o responsável por sua dor e angústia. Um jovem de aparência arrogante, impecavelmente vestido, do outro lado do balcão, sendo instruído por um homem de terno, que Zé deduziu ser o advogado. O playboy sequer olhou na direção de Zé.
+
+Na manhã seguinte, o telefone tocou. Era o delegado, que informou que os destroços que antes era seu Chevette '78, seu primeiro carro comprado usado já surrado com muito esforço e ajuda de seu pai, estavam liberados para retirada. Solidário, o delegado prometeu que pagaria o guincho do próprio bolso, sentindo-se impotente diante da situação.
+
+Ao chegar na delegacia, Zé viu a cena que incendiou sua alma: o jovem responsável pela morte de sua filha estava saindo, entrando em um carro de luxo, rindo de algo que seu advogado dizia. O delegado, ao ver a expressão de Zé, murmurou, com um misto de raiva e resignação: "Ele vai responder em liberdade. Réu primário. Sem gravações, sem testemunhas além de você. A pena será branda, Zé."
+
+![A Injustiça na Delegacia](./Images/image-2)
+
+---
+
+**(Página 5: O Fim e o Começo)**
+
+A impotência de Zé era um peso de chumbo. A injustiça era palpável.
+
+Naquela mesma tarde, no hospital, o monitor ao lado da cama de Helena começou a emitir um som contínuo e agudo. A equipe médica tentou reanimá-la em vão. Zé segurou a mão de sua esposa, que se tornava fria, enquanto as lágrimas escorriam pelo seu rosto. Não eram lágrimas de tristeza apenas, mas de fúria corrosiva.
+
+Com a perda de tudo, Zé Ambrósio não chorou mais. Em seu coração, em meio à dor lancinante, nasceu um juramento gelado: ele iria se vingar. Vingar Helena, vingar Maria Eduarda, e a vida que lhes foi roubada pela velocidade e pela impunidade.
+
+---
+
+**(Página 6: O Pacto)**
+
+Essa noite, na escuridão de sua garagem, ao lado dos destroços do seu Chevette, Zé, com o sangue fervendo e o coração em cinzas, fez o pacto com uma entidade macabra. Ele se tornaria a justiça que as estradas nunca tiveram: O Lasanheiro Fantasma, o caçador de rachadores e o juiz implacável de todos aqueles que tiveram suas vidas ceifadas por corridas ilegais.
+
+![O Pacto na Garagem](./Images/image-3)
+
+**(Fim do Prólogo)**

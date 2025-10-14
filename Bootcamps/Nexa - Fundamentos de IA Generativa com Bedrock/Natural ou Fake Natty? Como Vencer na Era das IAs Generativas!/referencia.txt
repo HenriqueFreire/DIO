@@ -1,0 +1,39 @@
+Aqui estão as sugestões de prompts para as cenas cruciais da história, focando na consistência dos elementos (Zé e o Chevette):
+
+1. Zé e sua Família (Contraste com a Tragédia)
+
+    Personagens: Zé (homem simples, de meia-idade, talvez usando uma camisa de flanela e calça jeans, expressão cansada mas amorosa), Helena (esposa, simples, sorriso gentil), Maria Eduarda (filha, 8 anos, sorriso no rosto, segurando um desenho).
+
+    Carro: O Chevette '78 (cor mostarda, amassados leves e aparência bem "surrada", com adesivos de família ou simples).
+
+    Cena: Zé, Helena e Maria Eduarda estão dentro ou ao lado do Chevette surrado, sob a luz quente do fim de tarde, em frente a uma casa simples. A imagem deve evocar simplicidade e felicidade.
+
+    Prompt Sugerido: "Realista, foto de família, um homem de meia-idade, sua esposa sorridente e sua filha de 8 anos (Maria Eduarda) posam ao lado de um Chevrolet Chevette 1978 cor mostarda e muito usado. Ambiente simples de periferia brasileira, final de tarde, luz quente. O homem usa camisa de flanela. Foco na felicidade e no carro surrado. --ar 16:9"
+
+2. A Injustiça na Delegacia (Momento da Raiva)
+
+    Personagem: Zé (rosto devastado, olhos vermelhos, roupas amassadas), e o jovem rico (engomado, loiro, terno caro, esnobe).
+
+    Cena: Zé está em primeiro plano, encostado na parede de uma delegacia com pouca luz, olhando com ódio puro. Em segundo plano, através de uma porta ou vidro, o jovem playboy está sorrindo, entrando em um carro de luxo (BMW ou Mercedes), ao lado de seu advogado.
+
+    Prompt Sugerido: "Realista, homem devastado (Zé) em primeiro plano, encostado em uma parede escura de delegacia, com expressão de raiva e luto. Em segundo plano, através da porta de vidro, um jovem bem vestido e sorridente (o culpado) entra em um carro de luxo esportivo, acompanhado por um advogado. Contraste de classes e emoções. Iluminação fria. --ar 16:9"
+
+3. O Pacto na Garagem (A Transformação de Zé e do Chevette)
+
+    Personagem: Zé (ainda em roupas de mecânico/simples, mas agora ajoelhado, com o rosto banhado em fúria e lágrimas). A Entidade Macabra (pode ser uma silhueta sombria, ou uma figura feita de óleo e fumaça de escapamento, com olhos vermelhos).
+
+    Carro: O Chevette destruído (o mesmo carro mostarda, agora com amassados profundos e partes faltando, melancólico).
+
+    Cena: Zé está na escuridão de sua garagem, ajoelhado ao lado dos destroços do Chevette. A entidade macabra paira sobre ele, envolta em uma névoa que cheira a combustível queimado e eletricidade estática. O foco é no desespero de Zé e na presença sobrenatural.
+
+    Prompt Sugerido: "Realista, cena sombria e dramática. Homem (Zé, rosto com barba rala, camisa de flanela) ajoelhado na escuridão de uma garagem, chorando em fúria ao lado dos destroços de um Chevrolet Chevette 1978 cor mostarda. Uma Entidade Macabra, feita de sombras e fumaça preta de motor, paira sobre ele, oferecendo um pacto. Olhos vermelhos e incandescentes. Estilo cinematográfico. --ar 16:9"
+
+4. O Lasanheiro Fantasma (A Forma Final)
+
+    Personagem: Zé transformado (rosto sombrio, olhos em chamas, roupas escuras).
+
+    Carro: O Chevette Fantasma (o mesmo carro mostarda, mas agora limpo e aprimorado, com um brilho espectral, chamas azuis/alaranjadas emanando das rodas e do escapamento).
+
+    Cena: O Lasanheiro Fantasma está de pé ao lado do Chevette transformado, em uma rua noturna. O carro está "flutuando" levemente, pronto para caçar rachadores. Ele segura uma chave de roda ou uma peça incandescente.
+
+    Prompt Sugerido: "Estilo HQ/Cinematográfico, O Lasanheiro Fantasma. Um homem (Zé) com olhos de fogo e expressão vingativa, vestindo roupas de mecânico escuras. Ele está ao lado de um Chevrolet Chevette 1978 cor mostarda, agora com um brilho espectral. Chamas azuis e fumaça saem das rodas e do escapamento. Rua escura de cidade grande, chuvosa, neon. Ação. --ar 16:9"

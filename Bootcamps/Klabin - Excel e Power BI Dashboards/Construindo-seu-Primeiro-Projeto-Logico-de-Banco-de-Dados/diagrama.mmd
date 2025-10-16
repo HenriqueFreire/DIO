@@ -1,0 +1,75 @@
+ erDiagram
+     client {
+         int idClient PK
+         varchar(30) Fname
+         char(3) Minit
+         varchar(20) Lname
+         char(11) CPF UK
+         char(14) CNPJ UK
+         varchar(255) Address
+         enum ClientType
+     }
+ 
+     payment {
+         int idPayment PK
+         int idClient FK
+         enum typePayment
+         decimal limitAvailable
+     }
+ 
+     orders {
+         int idOrder PK
+         int idClient FK
+         int idPayment FK
+         enum orderStatus "default 'Em Processamento'"
+         varchar(255) orderDescription
+         decimal(10,2) sendValue "default 10.00"
+         boolean paymentCash
+         varchar(50) trackingCode
+     }
+ 
+     product {
+         int idProduct PK
+         varchar(40) Pname
+         boolean classification_kids
+         enum category
+         decimal(3,1) rating "default 0"
+         varchar(20) size
+     }
+ 
+     supplier {
+         int idSupplier PK
+         varchar(255) SocialName
+         char(14) CNPJ UK
+         char(11) contact
+     }
+ 
+     seller {
+         int idSeller PK
+         varchar(255) SocialName
+         varchar(255) AbstName
+         char(14) CNPJ UK
+         char(11) CPF UK
+         varchar(255) location
+         char(11) contact
+     }
+ 
+     productOrder {
+         int idPoProduct PK, FK
+         int idPorder PK, FK
+         int poQuantity
+     }
+ 
+     productSeller {
+         int idPseller PK, FK
+         int idProduct PK, FK
+         int prodQuantity
+     }
+ 
+     client ||--o{ payment : "has (on delete cascade)"
+     client ||--o{ orders : "places (on delete restrict)"
+     payment ||--o{ orders : "is_used_in (on delete restrict)"
+     orders }o--|{ productOrder : "contains (on delete restrict)"
+     product }o--|{ productOrder : "is_in (on delete restrict)"
+     seller }o--|{ productSeller : "sells (on delete cascade)"
+     product }o--|{ productSeller : "is_sold_by (on delete cascade)"

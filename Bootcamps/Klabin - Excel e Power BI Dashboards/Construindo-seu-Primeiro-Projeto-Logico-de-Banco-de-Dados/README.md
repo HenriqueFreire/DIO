@@ -30,28 +30,10 @@ erDiagram
         varchar Fname
         char Minit
         varchar Lname
-        char CPF "UNIQUE"
-        char CNPJ "UNIQUE"
+        char CPF "unique"
+        char CNPJ "unique"
         varchar Address
-        enum ClientType "Indica PF ou PJ"
-    }
-
-    payment {
-        int idPayment PK
-        int idClient FK "→ client.idClient"
-        enum typePayment
-        decimal limitAvailable
-    }
-
-    orders {
-        int idOrder PK
-        int idClient FK "→ client.idClient"
-        int idPayment FK "→ payment.idPayment"
-        enum orderStatus
-        varchar orderDescription
-        decimal sendValue
-        boolean paymentCash
-        varchar trackingCode
+        enum ClientType
     }
 
     product {
@@ -63,10 +45,28 @@ erDiagram
         varchar size
     }
 
+    payment {
+        int idPayment PK
+        int idClient FK
+        enum typePayment
+        decimal limitAvailable
+    }
+
+    orders {
+        int idOrder PK
+        int idClient FK
+        int idPayment FK
+        enum orderStatus
+        varchar orderDescription
+        decimal sendValue
+        boolean paymentCash
+        varchar trackingCode
+    }
+
     supplier {
         int idSupplier PK
         varchar SocialName
-        char CNPJ "UNIQUE"
+        char CNPJ "unique"
         char contact
     }
 
@@ -74,33 +74,113 @@ erDiagram
         int idSeller PK
         varchar SocialName
         varchar AbstName
-        char CNPJ "UNIQUE"
-        char CPF "UNIQUE"
+        char CNPJ "unique"
+        char CPF "unique"
         varchar location
         char contact
     }
 
-    productOrder {
-        int idPoProduct PK, FK "→ product.idProduct"
-        int idPorder PK, FK "→ orders.idOrder"
-        int poQuantity "Atributo da relação"
-    }
-
     productSeller {
-        int idPseller PK, FK "→ seller.idSeller"
-        int idProduct PK, FK "→ product.idProduct"
-        int prodQuantity "Atributo da relação"
+        int idPseller PK, FK
+        int idProduct PK, FK
+        int prodQuantity
     }
 
-    client ||--o{ payment : "possui"
-    client ||--o{ orders : "realiza"
-    payment }o--|| orders : "é usado para"
+    productOrder {
+        int idPoProduct PK, FK
+        int idPorder PK, FK
+        int poQuantity
+    }
+
+    client ||--o{ payment : "has"
+    client ||--o{ orders : "places"
+    payment ||--o{ orders : "is for"
     
-    orders }o--o{ product : "contém (via productOrder)"
-    seller }o--o{ product : "vende (via productSeller)"
+    orders }o--o{ productOrder : "contains"
+    productOrder o--o{ product : "references"
+
+    seller }o--o{ productSeller : "sells"
+    productSeller o--o{ product : "is"
 ```
 
 </details>
+
+
+## Como Executar o Projeto Localmente
+
+Estas instruções detalham como configurar e executar o banco de dados MariaDB para este projeto usando o ambiente Nix, que garante uma configuração consistente e reproduzível.
+
+### Pré-requisitos
+
+- **Nix:** Você precisa ter o [Nix package manager](https://nixos.org/download.html) instalado no seu sistema (Linux, macOS, ou WSL2 no Windows).
+
+### 1. Configuração Inicial (Apenas na primeira vez)
+
+Estes passos preparam o diretório do banco de dados e configuram o usuário inicial. Se o processo falhar, apague a pasta `.mariadb_data` e tente novamente.
+
+1.  **Inicie o ambiente Nix:**
+    ```bash
+    nix-shell
+    ```
+
+2.  **Crie o diretório de dados:**
+    ```bash
+    mkdir .mariadb_data
+    ```
+
+3.  **Inicialize o banco de dados:** O caminho precisa estar entre aspas para lidar com espaços no nome do diretório.
+    ```bash
+    mariadb-install-db --datadir="$PWD/.mariadb_data"
+    ```
+
+4.  **Inicie o servidor temporariamente** para configurar o usuário. Execute em segundo plano:
+    ```bash
+    mariadbd-safe --datadir="$PWD/.mariadb_data" --socket="/tmp/mysql.sock" --pid-file="$PWD/.mariadb_data/mysql.pid" &
+    ```
+
+5.  **Aguarde 5 segundos e defina a senha** para o seu usuário. A senha será `password`.
+    ```bash
+    sleep 5 && mysql --socket="/tmp/mysql.sock" -u henrique -e "ALTER USER CURRENT_USER() IDENTIFIED BY 'password';"
+    ```
+
+6.  **Pare o servidor temporário:**
+    ```bash
+    kill $(cat "$PWD/.mariadb_data/mysql.pid")
+    ```
+
+7.  Agora você pode sair do `nix-shell` com o comando `exit`.
+
+### 2. Iniciando e Populando o Banco de Dados
+
+Execute estes passos sempre que quiser iniciar o servidor e carregar os dados.
+
+1.  **Inicie o ambiente Nix:**
+    ```bash
+    nix-shell
+    ```
+
+2.  **Inicie o servidor MariaDB** em segundo plano:
+    ```bash
+    mariadbd-safe --datadir="$PWD/.mariadb_data" --socket="/tmp/mysql.sock" --pid-file="$PWD/.mariadb_data/mysql.pid" &
+    ```
+
+3.  **Aguarde 5 segundos e execute o script SQL.** O script irá apagar o banco de dados `ecommerce` (se existir), recriá-lo e popular todas as tabelas.
+    ```bash
+    sleep 5 && mysql -u henrique -p'password' < "Ecommerce - Scripts.sql"
+    ```
+
+### 3. Conexão via Cliente SQL (DBeaver)
+
+Após iniciar o servidor (passo 2), você pode se conectar com as seguintes credenciais:
+
+-   **Tipo de Conexão:** `MariaDB` ou `MySQL`
+-   **Host:** `localhost`
+-   **Porta:** `3306`
+-   **Banco de Dados:** `ecommerce`
+-   **Usuário:** `henrique`
+-   **Senha:** `password`
+
+**Importante:** Não use nenhuma configuração especial de soquete (socket) ou edite a URL JDBC no DBeaver. A conexão é via TCP/IP padrão, que funcionará após o download dos drivers corretos no DBeaver.
 
 ## Otimizações e Refinamentos Aplicados
 
@@ -132,16 +212,6 @@ O script SQL contém uma seção dedicada a consultas que respondem a perguntas 
 *   Qual a quantidade total de cada produto em estoque?
 
 Essas queries demonstram o uso de cláusulas SQL avançadas como `JOIN`, `GROUP BY`, `HAVING` e `ORDER BY` para realizar análises complexas.
-
-## Como Utilizar
-
-1.  **Pré-requisitos:** Certifique-se de ter o Docker e um cliente SQL (como DBeaver, MySQL Workbench ou Beekeeper Studio) instalados.
-2.  **Iniciar o Banco de Dados:** No terminal, execute o comando abaixo para iniciar um contêiner Docker com o servidor MySQL.
-    ```bash
-    sudo docker run --name dev-mysql -p 3306:3306 -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql:8 --default-authentication-plugin=mysql_native_password
-    ```
-3.  **Executar o Script:** Conecte-se ao servidor de banco de dados usando seu cliente SQL (Host: `127.0.0.1`, Usuário: `root`, sem senha) e execute o conteúdo do arquivo `Ecommerce - Scripts.sql`.
-4.  **Pronto!** O banco de dados `ecommerce` estará criado e populado, pronto para ser utilizado.
 
 ## Melhorias Propostas
 

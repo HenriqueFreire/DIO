@@ -75,3 +75,12 @@ Version: '10.11.11-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  MariaDB Serv
 2025-10-19  7:53:18 19 [Warning] Access denied for user 'henrique'@'localhost'
 2025-10-19  7:55:25 20 [Warning] Access denied for user 'henrique'@'localhost'
 2025-10-19  8:13:59 25 [Warning] Access denied for user 'henrique'@'localhost'
+2025-10-19 23:28:15 0 [Note] /nix/store/kj7ys9bv1sxxg9chgn6fgfckllrcybb2-mariadb-server-10.11.11/bin/mariadbd (initiated by: unknown): Normal shutdown
+2025-10-19 23:28:21 0 [Note] InnoDB: FTS optimize thread exiting.
+2025-10-19 23:28:26 0 [Note] InnoDB: Starting shutdown...
+2025-10-19 23:28:26 0 [Note] InnoDB: Dumping buffer pool(s) to /home/henrique/Documentos/DIO/Bootcamps/Klabin - Excel e Power BI Dashboards/Construindo-seu-Primeiro-Projeto-Logico-de-Banco-de-Dados/.mariadb_data/ib_buffer_pool
+2025-10-19 23:28:26 0 [Note] InnoDB: Buffer pool(s) dump completed at 251019 23:28:26
+2025-10-19 23:28:28 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2025-10-19 23:28:28 0 [Note] InnoDB: Shutdown completed; log sequence number 115425; transaction id 80
+2025-10-19 23:28:28 0 [Note] /nix/store/kj7ys9bv1sxxg9chgn6fgfckllrcybb2-mariadb-server-10.11.11/bin/mariadbd: Shutdown complete
+251019 23:28:29 mysqld_safe mysqld from pid file /home/henrique/Documentos/DIO/Bootcamps/Klabin - Excel e Power BI Dashboards/Construindo-seu-Primeiro-Projeto-Logico-de-Banco-de-Dados/.mariadb_data/mysql.pid ended

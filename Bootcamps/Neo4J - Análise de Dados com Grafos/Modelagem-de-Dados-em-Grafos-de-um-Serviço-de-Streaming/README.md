@@ -27,7 +27,7 @@ O modelo de dados representa as seguintes entidades e seus relacionamentos:
 
 O esquema do banco de dados pode ser visualizado no diagrama abaixo:
 
-![Diagrama do Modelo de Dados](diagram.png)
+![Diagrama do Modelo de Dados](schema_representation.png)
 
 ## Configuração do Ambiente de Desenvolvimento (Nix-Shell)
 

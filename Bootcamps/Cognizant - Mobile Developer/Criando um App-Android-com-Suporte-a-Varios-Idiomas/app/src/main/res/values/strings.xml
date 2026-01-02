@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Greeting App</string>
+    <string name="enter_name_hint">Enter your name</string>
+    <string name="greet_button_text">Greet Me</string>
+    <string name="good_morning">Good morning, %1$s!</string>
+    <string name="good_afternoon">Good afternoon, %1$s!</string>
+    <string name="good_night">Good night, %1$s!</string>
+    <string name="greeting_placeholder">Your greeting will appear here</string>
+</resources>

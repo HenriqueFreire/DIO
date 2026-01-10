@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">App de Saludo</string>
+    <string name="enter_name_hint">Ingresa tu nombre</string>
+    <string name="greet_button_text">Saludar</string>
+    <string name="good_morning">¡Buenos días, %1$s!</string>
+    <string name="good_afternoon">¡Buenas tardes, %1$s!</string>
+    <string name="good_night">¡Buenas noches, %1$s!</string>
+    <string name="greeting_placeholder">Tu saludo aparecerá aquí</string>
+</resources>

@@ -1,0 +1,18 @@
+# Compiled output
+*.class
+*.jar
+*.war
+*.zip
+*.log
+
+# Gradle
+.gradle/
+build/
+out/
+
+# IntelliJ IDEA
+.idea/
+local.properties
+
+# Project-specific
+desafio.jar

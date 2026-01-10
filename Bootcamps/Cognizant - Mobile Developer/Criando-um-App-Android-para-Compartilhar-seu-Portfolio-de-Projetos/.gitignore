@@ -1,0 +1,23 @@
+# Gradle
+.gradle/
+build/
+*/build/
+
+# Local configuration
+local.properties
+
+# IDE files
+.idea/
+*.iml
+.DS_Store
+/captures/
+*.hprof
+
+# APKs, AABs, and outputs
+*.apk
+*.aab
+
+# Keystore files
+*.jks
+*.keystore
+\n# Kotlin build cache\n.kotlin/

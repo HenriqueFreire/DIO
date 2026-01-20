@@ -1,0 +1,25 @@
+-Xajruntimetarget:1.5
+-Xlint:ignore
+-11
+-encoding
+UTF-8
+-showWeaveInfo
+-source
+11
+-target
+11
+-verbose
+-classpath
+/home/henrique/.m2/repository/org/aspectj/aspectjrt/1.9.7/aspectjrt-1.9.7.jar:/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/classes
+-d
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/classes
+-s
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/generated-sources/aspectj-maven-plugin
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/main/Main.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/CheckingAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/SavingsAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/InvestmentAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/InsufficientBalanceException.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/SalaryAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/Account.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/aspect/AccountBalanceAspect.java

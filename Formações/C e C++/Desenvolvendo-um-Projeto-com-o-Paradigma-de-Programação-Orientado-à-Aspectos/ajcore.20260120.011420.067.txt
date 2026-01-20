@@ -1,0 +1,181 @@
+---- AspectJ Properties ---
+AspectJ Compiler 1.9.21 built on Sunday Dec 10, 2023 at 18:55:52 PST
+---- Dump Properties ---
+Dump file: ajcore.20260120.011420.067.txt
+Dump reason: java.lang.NoSuchFieldError
+Dump on exception: true
+Dump at exit condition: abort
+---- Exception Information ---
+java.lang.NoSuchFieldError: RELEASE_17
+	at org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BaseProcessingEnvImpl.<clinit>(BaseProcessingEnvImpl.java:49)
+	at org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BatchAnnotationProcessorManager.configure(BatchAnnotationProcessorManager.java:79)
+	at org.aspectj.org.eclipse.jdt.internal.compiler.batch.Main.initializeAnnotationProcessorManager(Main.java:4677)
+	at org.aspectj.ajdt.ajc.BuildArgParser.initializeAnnotationProcessorManager(BuildArgParser.java:314)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:1070)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:275)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:188)
+	at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:103)
+	at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:47)
+	at org.aspectj.tools.ajc.Main.run(Main.java:374)
+	at org.aspectj.tools.ajc.Main.runMain(Main.java:253)
+	at org.codehaus.mojo.aspectj.AbstractAjcCompiler.execute(AbstractAjcCompiler.java:568)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
+---- System Properties ---
+awt.toolkit=sun.awt.X11.XToolkit
+java.specification.version=11
+sun.cpu.isalist=
+sun.jnu.encoding=UTF-8
+java.class.path=/nix/store/wm6maj39xl6dbl0phrjckgr1wdjarknd-maven-3.9.9/maven/boot/plexus-classworlds-2.8.0.jar
+java.vm.vendor=Oracle Corporation
+sun.arch.data.model=64
+java.vendor.url=https://openjdk.java.net/
+user.timezone=America/Sao_Paulo
+maven.conf=/nix/store/wm6maj39xl6dbl0phrjckgr1wdjarknd-maven-3.9.9/maven/conf
+os.name=Linux
+java.vm.specification.version=11
+sun.java.launcher=SUN_STANDARD
+user.country=BR
+sun.boot.library.path=/nix/store/mjjsidj0w2hq0g1g4cc7p4yd0zkg0r5g-openjdk-11.0.29+5/lib/openjdk/lib
+sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher clean compile exec:java
+jdk.debug=release
+maven.home=/nix/store/wm6maj39xl6dbl0phrjckgr1wdjarknd-maven-3.9.9/maven
+sun.cpu.endian=little
+user.home=/home/henrique
+user.language=pt
+java.specification.vendor=Oracle Corporation
+java.version.date=2025-10-21
+java.home=/nix/store/mjjsidj0w2hq0g1g4cc7p4yd0zkg0r5g-openjdk-11.0.29+5/lib/openjdk
+file.separator=/
+java.vm.compressedOopsMode=32-bit
+line.separator=
+
+java.specification.name=Java Platform API Specification
+java.vm.specification.vendor=Oracle Corporation
+java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment
+sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+java.runtime.version=11.0.29+0-adhoc..source
+user.name=henrique
+path.separator=:
+os.version=6.12.57
+java.runtime.name=OpenJDK Runtime Environment
+file.encoding=UTF-8
+guice.disable.misplaced.annotation.check=true
+java.vm.name=OpenJDK 64-Bit Server VM
+java.vendor.url.bug=https://bugreport.java.com/bugreport/
+java.io.tmpdir=/tmp
+java.version=11.0.29
+user.dir=/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos
+os.arch=amd64
+maven.multiModuleProjectDirectory=/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos
+java.vm.specification.name=Java Virtual Machine Specification
+java.awt.printerjob=sun.print.PSPrinterJob
+sun.os.patch.level=unknown
+java.library.path=
+java.vm.info=mixed mode
+java.vendor=Oracle Corporation
+java.vm.version=11.0.29+0-adhoc..source
+java.specification.maintenance.version=3
+classworlds.conf=/nix/store/wm6maj39xl6dbl0phrjckgr1wdjarknd-maven-3.9.9/maven/bin/m2.conf
+sun.io.unicode.encoding=UnicodeLittle
+library.jansi.path=/nix/store/wm6maj39xl6dbl0phrjckgr1wdjarknd-maven-3.9.9/maven/lib/jansi-native
+java.class.version=55.0
+---- Command Line ---
+-Xajruntimetarget:1.5
+-Xlint:ignore
+-11
+-encoding
+UTF-8
+-showWeaveInfo
+-source
+11
+-target
+11
+-verbose
+-classpath
+/home/henrique/.m2/repository/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar:/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/classes
+-d
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/classes
+-s
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/generated-sources/aspectj-maven-plugin
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/main/Main.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/CheckingAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/SavingsAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/InvestmentAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/InsufficientBalanceException.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/SalaryAccount.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/model/Account.java
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/src/main/java/com/dio/banking/aspect/AccountBalanceAspect.java
+---- Full Classpath ---
+/nix/store/mjjsidj0w2hq0g1g4cc7p4yd0zkg0r5g-openjdk-11.0.29+5/lib/openjdk/lib/jrt-fs.jar(106286 bytes)
+/home/henrique/.m2/repository/org/aspectj/aspectjrt/1.9.21/aspectjrt-1.9.21.jar(127268 bytes)
+/home/henrique/Documentos/DIO/Formações/C e C++/Desenvolvendo-um-Projeto-com-o-Paradigma-de-Programação-Orientado-à-Aspectos/target/classes(2 entries)
+---- Compiler Messages ---
+abort ABORT -- (NoSuchFieldError) RELEASE_17
+RELEASE_17
+java.lang.NoSuchFieldError: RELEASE_17
+	at org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BaseProcessingEnvImpl.<clinit>(BaseProcessingEnvImpl.java:49)
+	at org.aspectj.org.eclipse.jdt.internal.compiler.apt.dispatch.BatchAnnotationProcessorManager.configure(BatchAnnotationProcessorManager.java:79)
+	at org.aspectj.org.eclipse.jdt.internal.compiler.batch.Main.initializeAnnotationProcessorManager(Main.java:4677)
+	at org.aspectj.ajdt.ajc.BuildArgParser.initializeAnnotationProcessorManager(BuildArgParser.java:314)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performCompilation(AjBuildManager.java:1070)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.performBuild(AjBuildManager.java:275)
+	at org.aspectj.ajdt.internal.core.builder.AjBuildManager.batchBuild(AjBuildManager.java:188)
+	at org.aspectj.ajdt.ajc.AjdtCommand.doCommand(AjdtCommand.java:103)
+	at org.aspectj.ajdt.ajc.AjdtCommand.runCommand(AjdtCommand.java:47)
+	at org.aspectj.tools.ajc.Main.run(Main.java:374)
+	at org.aspectj.tools.ajc.Main.runMain(Main.java:253)
+	at org.codehaus.mojo.aspectj.AbstractAjcCompiler.execute(AbstractAjcCompiler.java:568)
+	at org.apache.maven.plugin.DefaultBuildPluginManager.executeMojo(DefaultBuildPluginManager.java:126)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute2(MojoExecutor.java:328)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.doExecute(MojoExecutor.java:316)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:212)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:174)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.access$000(MojoExecutor.java:75)
+	at org.apache.maven.lifecycle.internal.MojoExecutor$1.run(MojoExecutor.java:162)
+	at org.apache.maven.plugin.DefaultMojosExecutionStrategy.execute(DefaultMojosExecutionStrategy.java:39)
+	at org.apache.maven.lifecycle.internal.MojoExecutor.execute(MojoExecutor.java:159)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:105)
+	at org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(LifecycleModuleBuilder.java:73)
+	at org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(SingleThreadedBuilder.java:53)
+	at org.apache.maven.lifecycle.internal.LifecycleStarter.execute(LifecycleStarter.java:118)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:261)
+	at org.apache.maven.DefaultMaven.doExecute(DefaultMaven.java:173)
+	at org.apache.maven.DefaultMaven.execute(DefaultMaven.java:101)
+	at org.apache.maven.cli.MavenCli.execute(MavenCli.java:906)
+	at org.apache.maven.cli.MavenCli.doMain(MavenCli.java:283)
+	at org.apache.maven.cli.MavenCli.main(MavenCli.java:206)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced(Launcher.java:255)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.launch(Launcher.java:201)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode(Launcher.java:361)
+	at org.codehaus.plexus.classworlds.launcher.Launcher.main(Launcher.java:314)
+

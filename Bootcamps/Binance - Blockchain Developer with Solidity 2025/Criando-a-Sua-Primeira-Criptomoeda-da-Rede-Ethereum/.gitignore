@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.DS_Store
+coverage/
+.nyc_output/
+artifacts/
+cache/
+typechain/
+typechain-types/

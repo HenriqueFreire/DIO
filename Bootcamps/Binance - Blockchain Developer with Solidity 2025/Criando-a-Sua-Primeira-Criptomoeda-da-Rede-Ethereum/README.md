@@ -1,36 +1,84 @@
 # ZeDaManga (ZDM) Token
 
-Este é um token compatível com o padrão **ERC-20** da rede Ethereum. Abaixo estão explicadas as principais funcionalidades que ele possui.
+Este repositório contém o código-fonte e scripts para o token **ZeDaManga** (ZDM), um token ERC-20 desenvolvido com **Nix**, **Hardhat**, **TypeScript** e otimizado com **Yul (Assembly)**.
 
-## Funções Disponíveis
+## 🚀 Como Rodar o Projeto
 
-Como o contrato herda do padrão `ERC20` da OpenZeppelin, ele já vem com todas as funções essenciais prontas para uso:
+Este projeto utiliza **Nix** para gerenciar o ambiente de desenvolvimento de forma reprodutível.
 
-### Informações do Token
-- **`name()`**: Retorna o nome do token (`"ZeDaManga"`).
-- **`symbol()`**: Retorna o símbolo do token (`"ZDM"`).
-- **`decimals()`**: Retorna quantas casas decimais o token usa (padrão `18`).
-- **`totalSupply()`**: Retorna a quantidade total de tokens em existência. No nosso caso, fixada em **1.000.000 ZDM**.
+### Pré-requisitos
+- **Nix** instalado no sistema.
 
-### Movimentação e Saldos
-- **`balanceOf(address account)`**: Mostra quantos tokens uma carteira (`account`) possui.
-- **`transfer(address to, uint256 amount)`**: Envia `amount` tokens da sua carteira para a carteira `to`.
-    - *Nota*: Você precisa ter saldo suficiente para a transação ocorrer.
+### Configuração do Ambiente
+Utilizamos um `shell.nix` que provisiona automaticamente:
+- **Node.js v20**
+- **NPM**
+- **Git** e **Curl**
 
-### Aprovações (Sistema de "Mesada")
-O padrão ERC-20 permite que você autorize outras pessoas (ou contratos) a gastarem seus tokens:
-- **`approve(address spender, uint256 amount)`**: Autoriza o `spender` a gastar até `amount` dos seus tokens.
-- **`allowance(address owner, address spender)`**: Verifica quanto o `spender` ainda tem permissão para gastar da carteira do `owner`.
-- **`transferFrom(address from, address to, uint256 amount)`**: Usada por um terceiro (o `spender`) para transferir tokens da carteira `from` para `to`, descontando da "mesada" autorizada.
+Para entrar no ambiente isolado:
+```bash
+nix-shell
+```
+*Todas as dependências do projeto (Hardhat, TypeScript, etc.) serão instaladas/verificadas automaticamente via `npm` ao entrar.*
 
-## Características Especiais
-Nosso contrato tem uma característica definida no momento da criação (Deploy):
+### Comandos Disponíveis
 
-```solidity
-constructor() ERC20("ZeDaManga", "ZDM") {
-    _mint(msg.sender, 1000000 * 10 ** decimals());
-}
+Dentro do `nix-shell`:
+
+**Compilar os contratos:**
+```bash
+npx hardhat compile
 ```
 
-- **Mint Inicial**: Assim que o contrato é implantado, ele cria ("crunha") 1 milhão de tokens e os envia para a carteira de quem fez o deploy.
-- **Suprimento Fixo**: Como não criamos uma função pública de `mint` adicional, a quantidade de tokens é fixa e não pode ser aumentada posteriormente (deflacionário/fixo).
+**Fazer Deploy na rede local do Hardhat:**
+```bash
+npx hardhat run scripts/deploy.ts
+```
+*Saída esperada:*
+```
+Fazendo deploy do contrato com a conta: 0xf39...
+ZeDaManga implantado em: 0x5Fb...
+```
+
+**Rodar Testes:**
+```bash
+npx hardhat test
+```
+
+---
+
+## ⚡ Otimização: Yul (Assembly)
+
+Para atingir máxima eficiência de gás, o contrato `ZeDaManga` foi reescrito utilizando **Yul (Inline Assembly)**.
+
+Embora o arquivo tenha extensão `.sol`, o corpo do contrato [contracts/ZeDaManga.sol](contracts/ZeDaManga.sol) utiliza blocos `assembly { ... }` para manipular diretamente a memória e o armazenamento da EVM, ignorando grande parte do overhead do Solidity padrão. Isso demonstra um conhecimento avançado da máquina virtual Ethereum (EVM).
+
+---
+
+## 📖 Funcionalidades do Token
+
+O token segue o padrão **ERC-20** e possui as seguintes características:
+
+### Informações Básicas
+- **Nome**: `ZeDaManga`
+- **Símbolo**: `ZDM`
+- **Decimais**: `18`
+- **Supply Total**: `1,000,000` (Fixo)
+
+### Funções (Padrão ERC-20)
+- **`balanceOf(address)`**: Consulta saldo.
+- **`transfer(to, amount)`**: Transfere tokens.
+- **`approve(spender, amount)`**: Autoriza gasto por terceiros.
+- **`transferFrom(from, to, amount)`**: Transfere tokens autorizados.
+- **`allowance(owner, spender)`**: Consulta autorização restante.
+
+### Curiosidade Técnica
+O contrato não herda de nenhuma biblioteca (como OpenZeppelin) na versão final. Ele implementa a lógica ERC-20 "na unha" usando Assembly para ser o mais leve possível.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+- **Nix**: Gerenciamento de pacotes do sistema
+- **Hardhat**: Ambiente de desenvolvimento Ethereum
+- **TypeScript**: Scripts tipados
+- **Yul/Assembly**: Otimização de contratos inteligentes

@@ -3,6 +3,9 @@ import sys
 import requests
 from bs4 import BeautifulSoup
 from dotenv import load_dotenv
+from azure.ai.translation.text import TextTranslationClient
+from azure.core.credentials import AzureKeyCredential
+from azure.core.exceptions import HttpResponseError
 
 # Carregar variáveis de ambiente
 load_dotenv()
@@ -21,28 +24,26 @@ def get_config():
 def translate_text(text, target_language='pt-br'):
     key, region, endpoint = get_config()
     
-    path = '/translate?api-version=3.0'
-    # Adicionado textType=html para preservar tags
-    params = f'&to={target_language}&textType=html'
-    constructed_url = endpoint + path + params
+    # Inicializar o cliente do SDK
+    credential = AzureKeyCredential(key)
+    client = TextTranslationClient(credential=credential, endpoint=endpoint, region=region)
 
-    headers = {
-        'Ocp-Apim-Subscription-Key': key,
-        'Ocp-Apim-Subscription-Region': region,
-        'Content-type': 'application/json',
-        'X-ClientTraceId': str(os.urandom(16))
-    }
-
-    body = [{'text': text}]
-    
-    response = requests.post(constructed_url, headers=headers, json=body)
-    
-    if response.status_code != 200:
-        print(f"Erro na tradução: {response.status_code} - {response.text}")
-        return None
+    try:
+        # O SDK espera 'body' (lista de objetos InputTextItem ou dicionários)
+        body = [{"text": text}]
+        response = client.translate(body=body, to_language=[target_language], text_type='html')
+        translation = response[0] if response else None
         
-    res = response.json()
-    return res[0]['translations'][0]['text']
+        if translation:
+            return translation.translations[0].text
+        return None
+
+    except HttpResponseError as e:
+        print(f"Erro na tradução (SDK): {e.status_code} - {e.message}")
+        return None
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+        return None
 
 def extract_article_html(url):
     print(f"Extraindo HTML de: {url}")

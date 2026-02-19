@@ -1,0 +1,16 @@
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .menu ul li {
+        display: block;
+        margin: 5px 0;
+    }
+    .wrapper {
+        width: 95%;
+    }
+    .content {
+        overflow-x: auto; /* For tables to scroll horizontally */
+    }
+    iframe {
+        width: 100%; /* Make iframes responsive */
+    }
+}

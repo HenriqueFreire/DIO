@@ -1,0 +1,10 @@
+# Imagens do Projeto
+
+Este arquivo é um placeholder. Você pode organizar capturas de tela, diagramas ou outras imagens relevantes nesta pasta para complementar sua documentação no `README.md`.
+
+**Sugestão:**
+
+*   Use nomes de arquivo descritivos (ex: `copilot_code_generation.png`, `openai_filter_example.jpg`).
+*   Faça referência a essas imagens no seu `README.md` usando a sintaxe Markdown para imagens: `![Descrição da Imagem](images/nome_da_imagem.png)`
+
+Exclua este arquivo `placeholder.txt` quando você adicionar suas próprias imagens.

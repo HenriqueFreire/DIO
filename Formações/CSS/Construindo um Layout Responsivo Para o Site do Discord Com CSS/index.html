@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="discord-layout">
+        <aside class="server-sidebar">
+            <div class="server-icon active">D</div>
+            <div class="server-icon">S</div>
+            <div class="server-icon">A</div>
+            <div class="server-icon add-server"><i class="fas fa-plus"></i></div>
+        </aside>
+
+        <aside class="channel-sidebar">
+            <div class="channel-header">
+                <h3>Discord Clone</h3>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="channel-section">
+                <h4>TEXT CHANNELS</h4>
+                <a href="#" class="channel-item active"><i class="fas fa-hashtag"></i> general</a>
+                <a href="#" class="channel-item"><i class="fas fa-hashtag"></i> random</a>
+                <a href="#" class="channel-item"><i class="fas fa-hashtag"></i> memes</a>
+            </div>
+            <div class="channel-section">
+                <h4>VOICE CHANNELS</h4>
+                <a href="#" class="channel-item"><i class="fas fa-volume-up"></i> General</a>
+                <a href="#" class="channel-item"><i class="fas fa-volume-up"></i> Gaming</a>
+            </div>
+            <div class="user-info">
+                <img src="Images/profile1.jpg" alt="User Avatar" class="user-avatar">
+                <div class="user-name">User Name</div>
+                <div class="user-controls">
+                    <i class="fas fa-microphone"></i>
+                    <i class="fas fa-headphones"></i>
+                    <i class="fas fa-cog"></i>
+                </div>
+            </div>
+        </aside>
+
+        <main class="chat-area">
+            <header class="chat-header">
+                <div class="channel-name-header">
+                    <i class="fas fa-hashtag"></i> general
+                </div>
+                <div class="chat-controls">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-thumbtack"></i>
+                    <i class="fas fa-user-friends"></i>
+                    <input type="text" placeholder="Search">
+                    <i class="fas fa-inbox"></i>
+                    <i class="fas fa-question-circle"></i>
+                </div>
+            </header>
+            <div class="messages-container">
+                <div class="message">
+                    <img src="Images/profile1.jpg" alt="Avatar" class="message-avatar">
+                    <div class="message-content">
+                        <div class="message-author">User1 <span class="message-timestamp">Today at 1:00 PM</span></div>
+                        <div class="message-text">Hello everyone! This is a Discord clone.</div>
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="Images/profile2.jpg" alt="Avatar" class="message-avatar">
+                    <div class="message-content">
+                        <div class="message-author">User2 <span class="message-timestamp">Today at 1:05 PM</span></div>
+                        <div class="message-text">Looks great!</div>
+                    </div>
+                </div>
+                <!-- More messages can be added here -->
+            </div>
+            <div class="chat-input-container">
+                <input type="text" placeholder="Message #general">
+                <div class="input-icons">
+                    <i class="fas fa-plus-circle"></i>
+                    <i class="fas fa-gift"></i>
+                    <i class="fas fa-gif"></i>
+                    <i class="fas fa-smile"></i>
+                </div>
+            </div>
+        </main>
+
+        <aside class="user-list-sidebar">
+            <h4>ONLINE - 2</h4>
+            <div class="user-list-item">
+                <img src="Images/profile1.jpg" alt="User Avatar" class="user-avatar">
+                <span>User1</span>
+            </div>
+            <div class="user-list-item">
+                <img src="Images/profile2.jpg" alt="User Avatar" class="user-avatar">
+                <span>User2</span>
+            </div>
+            <h4>OFFLINE - 1</h4>
+            <div class="user-list-item">
+                <img src="Images/profile3.jpg" alt="User Avatar" class="user-avatar">
+                <span>User3</span>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

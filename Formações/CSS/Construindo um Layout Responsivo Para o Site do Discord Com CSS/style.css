@@ -1,0 +1,321 @@
+:root {
+    --discord-dark: #202225;
+    --discord-dark-alt: #2f3136;
+    --discord-light-dark: #36393f;
+    --discord-blue: #5865f2;
+    --discord-green: #3ba55c;
+    --discord-red: #ed4245;
+    --text-color: #dcddde;
+    --text-color-alt: #96989d;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--discord-dark);
+    color: var(--text-color);
+    overflow: hidden; /* Hide scrollbars for the main layout */
+}
+
+.discord-layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* Server Sidebar */
+.server-sidebar {
+    width: 72px;
+    background-color: var(--discord-dark);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.server-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--discord-light-dark);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: border-radius 0.2s ease, background-color 0.2s ease;
+}
+
+.server-icon:hover {
+    border-radius: 25%;
+    background-color: var(--discord-blue);
+}
+
+.server-icon.active {
+    border-radius: 25%;
+    background-color: var(--discord-blue);
+}
+
+.server-icon.add-server {
+    background-color: var(--discord-light-dark);
+}
+
+.server-icon.add-server:hover {
+    background-color: var(--discord-green);
+}
+
+/* Channel Sidebar */
+.channel-sidebar {
+    width: 240px;
+    background-color: var(--discord-dark-alt);
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.channel-header {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 0 rgba(4,4,5,0.2), 0 1.5px 0 rgba(6,6,7,0.05), 0 2px 0 rgba(4,4,5,0.05);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.channel-header h3 {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.channel-header i {
+    color: var(--text-color-alt);
+    font-size: 0.8rem;
+}
+
+.channel-section {
+    padding: 8px 0;
+    margin-top: 10px;
+}
+
+.channel-section h4 {
+    color: var(--text-color-alt);
+    font-size: 0.7rem;
+    padding: 0 16px;
+    margin: 0 0 8px 0;
+}
+
+.channel-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    color: var(--text-color-alt);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.channel-item i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
+.channel-item.active, .channel-item:hover {
+    color: var(--text-color);
+    background-color: rgba(79,84,92,0.32);
+    border-radius: 4px;
+    margin: 0 8px;
+}
+
+.user-info {
+    margin-top: auto;
+    height: 54px;
+    background-color: var(--discord-dark);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.user-info .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.user-info .user-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    flex-grow: 1;
+}
+
+.user-info .user-controls i {
+    color: var(--text-color-alt);
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+/* Chat Area */
+.chat-area {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--discord-light-dark);
+    min-width: 0; /* Allows the chat area to shrink when necessary */
+}
+
+.chat-header {
+    height: 48px;
+    background-color: var(--discord-light-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 0 rgba(4,4,5,0.2), 0 1.5px 0 rgba(6,6,7,0.05), 0 2px 0 rgba(4,4,5,0.05);
+    z-index: 1;
+    flex-shrink: 0;
+}
+
+.channel-name-header {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.channel-name-header i {
+    color: var(--text-color-alt);
+    margin-right: 8px;
+}
+
+.chat-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.chat-controls i {
+    color: var(--text-color-alt);
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.chat-controls input {
+    background-color: var(--discord-dark);
+    border: none;
+    border-radius: 4px;
+    padding: 6px 8px;
+    color: var(--text-color);
+    width: 150px;
+    font-size: 0.9rem;
+}
+
+.messages-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.message-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.message-content {
+    flex-grow: 1;
+}
+
+.message-author {
+    font-weight: bold;
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.message-timestamp {
+    color: var(--text-color-alt);
+    font-size: 0.75rem;
+    margin-left: 8px;
+    font-weight: normal;
+}
+
+.message-text {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.chat-input-container {
+    background-color: var(--discord-light-dark);
+    padding: 20px 16px;
+    border-top: 1px solid var(--discord-dark-alt);
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.chat-input-container input {
+    flex-grow: 1;
+    background-color: var(--discord-dark-alt);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--text-color);
+    font-size: 0.95rem;
+    margin-right: 10px;
+}
+
+.input-icons i {
+    color: var(--text-color-alt);
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+
+/* User List Sidebar */
+.user-list-sidebar {
+    width: 240px;
+    background-color: var(--discord-dark-alt);
+    padding: 10px 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+.user-list-sidebar h4 {
+    color: var(--text-color-alt);
+    font-size: 0.7rem;
+    padding: 0 16px;
+    margin: 16px 0 8px 0;
+}
+
+.user-list-item {
+    display: flex;
+    align-items: center;
+    padding: 6px 16px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.user-list-item .user-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+

@@ -23,17 +23,25 @@ Ao longo deste projeto, busquei alcançar os seguintes objetivos:
 
 Nesta seção, serão adicionados exemplos práticos de como o Copilot e as ferramentas da OpenAI foram utilizados. Isso incluirá os prompts específicos que foram formulados e os resultados obtidos, destacando as funcionalidades de cada ferramenta e a efetividade dos filtros de conteúdo.
 
-### Exemplo 1: [Breve Descrição do Exemplo]
+### Exemplo 1: Explicação de Big O Notation (Técnica: Role Play)
 *   **Prompt:**
     ```
-    [Seu Prompt Aqui]
+    Aja como um engenheiro de software experiente. Explique a notação Big O para um iniciante em programação de forma clara e concisa, usando exemplos práticos em Python.
     ```
 *   **Resultado Obtido:**
-    [Descrição do resultado ou trecho relevante]
+    [Cole aqui a explicação gerada pela IA sobre Big O Notation]
 *   **Observações:**
-    [Anotações sobre o processo, filtros acionados, ou ajustes feitos no prompt]
+    [Anotações sobre a clareza da explicação, a relevância dos exemplos, e como a persona de "engenheiro de software experiente" influenciou a resposta.]
 
-*(Adicione mais exemplos seguindo o formato acima)*
+### Exemplo 2: Vantagens de Inglês para Desenvolvedores (Técnica: Role Play)
+*   **Prompt:**
+    ```
+    Aja como um conselheiro de carreira para desenvolvedores. Liste as 5 principais vantagens de aprender inglês para um profissional de desenvolvimento de software, com ênfase no crescimento da carreira e acesso a recursos.
+    ```
+*   **Resultado Obtido:**
+    [Cole aqui a lista de vantagens gerada pela IA]
+*   **Observações:**
+    [Anotações sobre a qualidade dos argumentos, a organização da lista, e como a persona de "conselheiro de carreira" moldou a resposta.]
 
 ## Aprendizados e Anotações
 

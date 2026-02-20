@@ -81,20 +81,41 @@ ul {
     cursor: pointer;
     font-weight: 700;
     text-transform: uppercase;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform transition */
 }
 
-.subscribe-btn:hover, .login-btn:hover {
+.subscribe-btn:hover {
     background-color: #0056b3;
+    transform: translateY(-3px); /* Lift effect */
 }
 
 .login-btn {
     background-color: transparent;
     border: 1px solid #007bff;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform transition */
 }
 
 .login-btn:hover {
     background-color: #007bff;
+    transform: translateY(-3px); /* Lift effect */
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform transition */
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Lift effect */
 }
 
 /* Hero Section Styling */
@@ -122,6 +143,10 @@ ul {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    animation: fadeInSlideUp 1s ease-out forwards; /* Apply animation */
+    animation-delay: 0.5s; /* Delay for effect */
 }
 
 .hero-content h1 {
@@ -200,6 +225,13 @@ ul {
     background-image: url('https://via.placeholder.com/200x300/555555/FFFFFF?text=Poster'); /* Placeholder for posters */
     background-size: cover;
     background-position: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add transitions */
+}
+
+.carousel-item:hover {
+    transform: scale(1.05); /* Slightly scale up */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Add shadow */
+    cursor: pointer;
 }
 
 /* Footer Styling */
@@ -250,3 +282,12 @@ ul {
         height: 225px;
     }
 }
+
+/* Animation Keyframes */
+@keyframes fadeInSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+

@@ -42,6 +42,11 @@ ul {
 
 .header .logo img {
     height: 40px;
+    transition: transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+.header .logo img:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
 }
 
 .header .nav-list {

@@ -1,0 +1,223 @@
+/* General Styles & Resets */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8; /* Light background */
+    color: #333; /* Dark text */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.main-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.8em;
+    color: #0056b3; /* Wikipedia blue-ish color */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin-left: 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #0056b3;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: #003d82;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.article {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.sidebar {
+    flex-shrink: 0;
+    width: 280px;
+    margin-right: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.toc h2 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.toc li {
+    margin-bottom: 8px;
+}
+
+.toc a {
+    text-decoration: none;
+    color: #0056b3;
+    transition: color 0.3s ease;
+}
+
+.toc a:hover {
+    color: #003d82;
+    text-decoration: underline;
+}
+
+/* Article Typography and Elements */
+.article-title {
+    font-size: 2.5em;
+    color: #222;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.article h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.article p {
+    margin-bottom: 15px;
+}
+
+.article a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+
+.article ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.article ul li {
+    margin-bottom: 5px;
+}
+
+figure {
+    margin: 20px 0;
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.main-footer p {
+    margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .site-title {
+        text-align: center;
+    }
+    
+    .article {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "Henrique Gabriel",
+  "photo": "https://avatars.githubusercontent.com/u/9603675?v=4",
+  "job": "Full-Stack Developer",
+  "location": "Valinhos-SP",
+  "phone": "+55 11 96809-6064",
+  "email": "henriquefreire@outlook.com.br",
+  "skills": {
+    "hardSkills": [
+      { "name": "JavaScript", "logo": "https://icon.icepanel.io/Technology/svg/JavaScript.svg" },
+      { "name": "TypeScript", "logo": "https://icon.icepanel.io/Technology/svg/TypeScript.svg" },
+      { "name": "React.js", "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/react.png" },
+      { "name": "React Native", "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/react.png" },
+      { "name": "Node.js", "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/nodejs.png" },
+      { "name": "PostgreSQL", "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/postgresql.png" },
+      { "name": "Docker", "logo": "" },
+      { "name": "Nix", "logo": "" },
+      { "name": "Python", "logo": "https://raw.githubusercontent.com/digitalinnovationone/js-developer-portfolio/main/data/imgs/python.png" },
+      { "name": "FastAPI", "logo": "" },
+      { "name": "Fastify", "logo": "" }
+    ],
+    "softSkills": [
+      "Self-Management",
+      "Problem-Solving",
+      "Effective Communication",
+      "Collaboration",
+      "Empathy"
+    ]
+  },
+  "languages": [
+    "Português (Native)",
+    "Inglês A1",
+    "Espanhol A1"
+  ],
+  "portfolio": [
+    {
+      "name": "Rebaixometro (Football Voting App)",
+      "url": "https://github.com/HenriqueFreire/Rebaixometro",
+      "github": true
+    },
+    {
+      "name": "IA-English Full-stack App",
+      "url": "#",
+      "github": false
+    },
+    {
+      "name": "DIO - Bootcamp meutudo: API de F1 com Fastify",
+      "url": "https://github.com/HenriqueFreire/DIO/tree/main/Bootcamps/meutudo%20-%20Mobile%20Developer/Criando%20uma%20Minimal%20API%20da%20F%C3%B3rmula%201%20com%20Node.js%20e%20Fastify",
+      "github": true
+    }
+  ],
+  "professionalExperience": [
+    {
+      "name": "DesenvolvendoMe - Desenvolvedor",
+      "period": "julho de 2024 - outubro de 2025 (1 ano 4 meses)",
+      "description": "Participei no desenvolvimento e implementação de soluções Full-Stack completas utilizando uma pilha de tecnologias modernas."
+    }
+  ]
+}

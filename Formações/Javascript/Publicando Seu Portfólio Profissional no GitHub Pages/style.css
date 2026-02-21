@@ -1,0 +1,282 @@
+/* Basic Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+/* Header & Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 3px solid #77aaff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header nav a:hover {
+    color: #77aaff;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #555 url('https://via.placeholder.com/1500x500?text=Background+Image') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+    padding: 60px 0;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay */
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #77aaff;
+    margin-bottom: 20px;
+    object-fit: cover;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: #77aaff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #5588cc;
+}
+
+.btn-small {
+    display: inline-block;
+    color: #fff;
+    background: #77aaff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 0.9em;
+    margin: 5px 0;
+    transition: background 0.3s ease;
+}
+
+.btn-small:hover {
+    background: #5588cc;
+}
+
+/* Sections */
+.section-padded {
+    padding: 60px 0;
+}
+
+.section-padded h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+}
+
+.section-padded h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: #77aaff;
+    border-radius: 2px;
+}
+
+.bg-light {
+    background: #e9e9e9;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.project-card a {
+    margin: 0 5px;
+}
+
+/* Resume Section */
+#resume ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+#resume ul li {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 15px;
+}
+
+#resume h3 {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+#resume h4 {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+#resume p {
+    color: #777;
+    font-size: 0.95em;
+}
+
+/* Contact & Social Links */
+.social-links a {
+    display: inline-block;
+    color: #77aaff;
+    font-size: 1.2em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .section-padded h2 {
+        font-size: 2em;
+    }
+}

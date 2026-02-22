@@ -6,6 +6,7 @@ let mapedKeys = [];
 let audio = new Audio("src/tunes/a.wav");
 
 const playTune = (key) => {
+  console.log("playTune called with key:", key);
   audio.src = `src/tunes/${key}.wav`;
   audio.play();
 
@@ -22,6 +23,7 @@ pianoKeys.forEach((key) => {
 });
 
 document.addEventListener("keydown", (e) => {
+  console.log("keydown event - e.key:", e.key, "e.code:", e.code);
   if (mapedKeys.includes(e.key)) {
     playTune(e.key);
   }

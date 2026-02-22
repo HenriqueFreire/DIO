@@ -24,7 +24,7 @@ As seguintes teclas do teclado são mapeadas para as notas do piano:
 | :--------------- | :------------ |
 | `a`              | Tecla Branca  |
 | `w`              | Tecla Preta   |
-| `s`              | Tecla Branca  |
+| `s`              | |
 | `e`              | Tecla Preta   |
 | `d`              | Tecla Branca  |
 | `f`              | Tecla Preta   |

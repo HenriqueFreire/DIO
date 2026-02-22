@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #333;
+    font-family: sans-serif;
+}
+
+.piano-container {
+    display: flex;
+    position: relative;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.white-keys {
+    display: flex;
+}
+
+.white-key {
+    width: 60px;
+    height: 250px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 2px;
+    z-index: 1;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.white-key:active,
+.white-key.active {
+    background-color: #eee;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.white-key:last-child {
+    margin-right: 0;
+}
+
+.black-keys {
+    position: absolute;
+    display: flex;
+    top: 20px;
+    left: 45px; /* Adjust this value to align black keys correctly */
+    z-index: 2;
+}
+
+.black-key {
+    width: 35px;
+    height: 150px;
+    background-color: black;
+    border: 1px solid #333;
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 -5px 0 rgba(0, 0, 0, 0.5);
+    margin-right: 27px; /* Adjust to position between white keys */
+    margin-left: -17px; /* Adjust to position between white keys */
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.black-key:active,
+.black-key.active {
+    background-color: #333;
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Specific positioning for black keys to sit between white keys */
+.black-keys .black-key:nth-child(3) { /* Skip D# / Eb */
+    margin-left: 55px; /* Adjust as needed */
+}
+
+.black-keys .black-key:nth-child(4) { /* Skip G# / Ab */
+    margin-left: 55px; /* Adjust as needed */
+}

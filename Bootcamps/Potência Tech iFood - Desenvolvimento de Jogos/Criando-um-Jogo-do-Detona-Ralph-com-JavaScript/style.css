@@ -1,0 +1,124 @@
+/* Estilos gerais para o corpo da página */
+body {
+  font-family: Arial, sans-serif; /* Define a fonte do texto */
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+  background-color: #f0f0f0; /* Cor de fundo suave */
+  margin: 0; /* Remove margens padrão */
+}
+
+/* Container principal do jogo */
+.game-container {
+  background-color: #fff; /* Fundo branco para o container do jogo */
+  padding: 20px; /* Preenchimento interno */
+  border-radius: 10px; /* Cantos arredondados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center; /* Centraliza o texto */
+  max-width: 90vw; /* Garante que não transborde em telas pequenas */
+  width: 400px; /* Largura base */
+  position: relative; /* Necessário para o posicionamento absoluto dos painéis */
+}
+
+/* Estilos para os painéis de início e fim de jogo */
+.panel {
+  position: absolute; /* Posicionamento absoluto dentro do game-container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Fundo semi-transparente */
+  display: flex; /* Usa flexbox para centralizar o conteúdo do painel */
+  flex-direction: column; /* Organiza os itens em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  border-radius: 10px; /* Cantos arredondados */
+  z-index: 10; /* Garante que os painéis fiquem acima dos outros elementos */
+}
+
+/* Estilos para o título dentro dos painéis */
+.panel h1 {
+  font-size: 2.5em; /* Tamanho da fonte */
+  margin-bottom: 10px; /* Margem inferior */
+}
+
+/* Estilos para parágrafos dentro dos painéis */
+.panel p {
+  font-size: 1.2em; /* Tamanho da fonte */
+  margin-bottom: 20px; /* Margem inferior */
+}
+
+/* Estilos para os botões dentro dos painéis */
+.panel button {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Cor do texto branco */
+  padding: 10px 20px; /* Preenchimento */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Cantos arredondados */
+  font-size: 1.2em; /* Tamanho da fonte */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Efeito hover para os botões */
+.panel button:hover {
+  background-color: #45a049; /* Escurece a cor de fundo ao passar o mouse */
+}
+
+/* Classe para esconder elementos */
+.hidden {
+  display: none !important; /* Esconde o elemento, substituindo qualquer outro display */
+}
+
+/* Estilos para a grade do jogo (onde os buracos estão) */
+.game-grid {
+  display: grid; /* Usa grid layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas de largura igual */
+  grid-template-rows: repeat(3, 1fr); /* 3 linhas de altura igual */
+  gap: 10px; /* Espaçamento entre os buracos */
+  justify-content: center; /* Centraliza itens na grade */
+  width: 100%; /* Ocupa a largura total do contêiner */
+  max-width: 400px; /* Limita o tamanho da grade */
+  margin: 0 auto; /* Centraliza a grade */
+}
+
+/* Estilos para cada buraco no jogo */
+.hole {
+  width: 100%; /* Ocupa a largura total da célula da grade */
+  padding-bottom: 100%; /* Cria buracos quadrados (mantém a proporção) */
+  background-color: #8B4513; /* Cor marrom para o buraco */
+  border-radius: 50%; /* Torna o buraco circular */
+  position: relative; /* Necessário para posicionar o Ralph */
+  overflow: hidden; /* Esconde o que sai do buraco (o Ralph antes de subir) */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+}
+
+/* Estilos para o elemento 'mole' (que agora representa o Ralph) */
+.mole {
+  width: 80%; /* Ajusta o tamanho do Ralph em relação ao buraco */
+  height: 80%; /* Ajusta o tamanho do Ralph em relação ao buraco */
+  position: absolute; /* Posicionamento absoluto dentro do buraco */
+  bottom: 0; /* Começa na parte inferior do buraco */
+  left: 10%; /* Centraliza o Ralph horizontalmente (10% de cada lado) */
+  transition: all 0.2s ease-in-out; /* Transição suave para o movimento do Ralph */
+}
+
+/* Estilos específicos para o sprite do Ralph, incluindo a animação */
+.ralph-mole {
+  background-image: url('sprites_ralph.png'); /* Imagem do sprite sheet do Ralph */
+  background-size: 300% 300%; /* Redimensiona a imagem do sprite sheet para caber 3x3 sprites no elemento */
+  background-repeat: no-repeat; /* Evita a repetição da imagem de fundo */
+  animation: ralphAnimation 1s steps(9) infinite; /* Aplica a animação: 1s de duração, 9 passos (frames), repete infinitamente */
+}
+
+/* Keyframes para a animação do sprite do Ralph (grid 3x3) */
+@keyframes ralphAnimation {
+  0%   { background-position: 97% -50%; } /* Frame (0,0) - 1º sprite */
+  50% { background-position: 97% 0%; } /* Frame (1,0) - 2º sprite */
+  100% { background-position: 97% -50%; } /* Volta para o primeiro frame para um loop suave */
+}
+
+/* Quando o buraco está 'up' (Ralph está visível) */
+.hole.up .mole {
+  bottom: 10px; /* Move o Ralph para cima, tornando-o visível */
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole</title>
+    <!-- Inclui a folha de estilos CSS para a aparência do jogo -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- Container principal do jogo, centraliza todo o conteúdo -->
+    <div class="game-container">
+      <!-- Painel de início do jogo, visível antes do jogo começar -->
+      <div class="panel" id="start-panel">
+        <h1>Whack-a-Ralph!</h1>
+        <p>Acerte os Ralphs para marcar pontos!</p>
+        <button id="panel-start-button">Iniciar Jogo</button>
+      </div>
+
+      <!-- Painel de fim de jogo, visível quando o tempo acaba -->
+      <div class="panel hidden" id="game-over-panel">
+        <h1>Fim de Jogo!</h1>
+        <p>Sua pontuação final: <span id="final-score">0</span></p>
+        <button id="replay-button">Jogar Novamente</button>
+      </div>
+
+      <!-- Título principal do jogo (visível durante o jogo) -->
+      <h1>Whack-a-Ralph!</h1>
+      <!-- Placar do jogo, exibe pontuação e tempo restante -->
+      <div class="score-board">
+        <h2>Pontuação: <span id="score">0</span></h2>
+        <h2>Tempo: <span id="time-left">60</span></h2>
+      </div>
+
+      <!-- Grade do jogo onde os Ralphs aparecerão -->
+      <div class="game-grid">
+        <!-- Cada 'hole' (buraco) é um local onde o Ralph pode aparecer -->
+        <div class="hole" id="hole1"></div>
+        <div class="hole" id="hole2"></div>
+        <div class="hole" id="hole3"></div>
+        <div class="hole" id="hole4"></div>
+        <div class="hole" id="hole5"></div>
+        <div class="hole" id="hole6"></div>
+        <div class="hole" id="hole7"></div>
+        <div class="hole" id="hole8"></div>
+        <div class="hole" id="hole9"></div>
+      </div>
+    </div>
+    <!-- Inclui o script JavaScript para a lógica do jogo -->
+    <script src="script.js"></script>
+    <!-- Elementos de áudio para efeitos sonoros -->
+    <audio id="whack-sound" src="sounds/whack.mp3" preload="auto"></audio>
+    <audio id="gameover-sound" src="sounds/gameover.mp3" preload="auto"></audio>
+  </body>
+</html>

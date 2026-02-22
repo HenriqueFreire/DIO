@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon NFT Battle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pokemon NFT Battle</h1>
+        <button id="connectWallet">Connect Metamask</button>
+        <p id="walletAddress">Not Connected</p>
+
+        <div id="pokemonList">
+            <h2>Your Pokémon</h2>
+            <ul id="ownedPokemon">
+                <!-- Pokémon NFTs will be listed here -->
+            </ul>
+        </div>
+
+        <div id="battleArena">
+            <h2>Battle Arena</h2>
+            <!-- Battle UI elements will go here -->
+        </div>
+    </div>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.7.esm.min.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+</html>

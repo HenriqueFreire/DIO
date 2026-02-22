@@ -1,0 +1,2 @@
+Vamos criar um jogo de batalhas pokémon usando tecnologia NFT
+Vamos usar um shell.nix, JS, Solidity, Ganache, Metamask, IPFS

@@ -1,0 +1,75 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fc1e8a;
+}
+
+.container{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.game{
+  width: 510px;
+  height: 510px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  transform-style: preserve-3d;
+  perspective: 500px;
+}
+
+.item{
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  font-size: 7.5em;
+  transform: rotateY(180deg);
+  transition: 0.25s;
+}
+
+.item::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #2e3e40;
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  transition: 0.25s;
+}
+
+.item.boxOpen{
+  transform: rotateY(0deg);
+}
+
+.item.boxOpen::before,
+.item.boxMatch::before{
+  transform: rotateY(180deg);
+}
+
+.reset{
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  font-size: 1.2em;
+  color: #2e3e40;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.reset:hover{
+  background-color: #2e3e40;
+  color: #fff;
+}

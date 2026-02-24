@@ -48,8 +48,11 @@ async def speech_to_text(audio_file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {e}")
 
+class ChatRequest(BaseModel):
+    text: str
+
 @app.post("/chat")
-async def chat_with_gpt(text: str):
+async def chat_with_gpt(request: ChatRequest):
     """
     Sends a text message to GPT-3.5-turbo and returns the AI's response.
     """
@@ -59,7 +62,7 @@ async def chat_with_gpt(text: str):
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
-            messages=[{"role": "user", "content": text}],
+            messages=[{"role": "user", "content": request.text}],
             max_tokens=150
         )
         ai_response = response.choices[0].message.content

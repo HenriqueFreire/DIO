@@ -25,7 +25,7 @@ public class MainMenu {
         this.jdbi = jdbi;
     }
 
-    public void execute() { // Removed SQLException
+    public void execute() {
         System.out.println("Bem vindo ao gerenciador de boards, escolha a opção desejada");
         var option = -1;
         while (true){
@@ -34,17 +34,23 @@ public class MainMenu {
             System.out.println("3 - Excluir um board");
             System.out.println("4 - Sair");
             option = scanner.nextInt();
-            switch (option){
-                case 1 -> createBoard();
-                case 2 -> selectBoard();
-                case 3 -> deleteBoard();
-                case 4 -> System.exit(0);
-                default -> System.out.println("Opção inválida, informe uma opção do menu");
+            try { // Centralized error handling
+                switch (option){
+                    case 1 -> createBoard();
+                    case 2 -> selectBoard();
+                    case 3 -> deleteBoard();
+                    case 4 -> System.exit(0);
+                    default -> System.out.println("Opção inválida, informe uma opção do menu");
+                }
+            } catch (RuntimeException ex) {
+                System.err.println("Ocorreu um erro: " + ex.getMessage());
+                // For a CLI, printing stack trace can be helpful for debugging
+                // ex.printStackTrace();
             }
         }
     }
 
-    private void createBoard() { // Removed SQLException
+    private void createBoard() {
         var entity = new BoardEntity();
         System.out.println("Informe o nome do seu board");
         entity.setName(scanner.next());
@@ -82,7 +88,7 @@ public class MainMenu {
         service.insert(entity);
     }
 
-    private void selectBoard() { // Removed SQLException
+    private void selectBoard() {
         System.out.println("Informe o id do board que deseja selecionar");
         var id = scanner.nextLong();
         // Using Jdbi instance
@@ -94,7 +100,7 @@ public class MainMenu {
         );
     }
 
-    private void deleteBoard() { // Removed SQLException
+    private void deleteBoard() {
         System.out.println("Informe o id do board que será excluido");
         var id = scanner.nextLong();
         // Using Jdbi instance

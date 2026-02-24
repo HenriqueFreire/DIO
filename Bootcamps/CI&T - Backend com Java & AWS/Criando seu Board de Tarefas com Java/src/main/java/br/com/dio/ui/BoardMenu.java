@@ -11,7 +11,7 @@ import br.com.dio.service.CardService;
 // import lombok.AllArgsConstructor; // REMOVED
 import org.jdbi.v3.core.Jdbi;
 
-import java.sql.SQLException; // Keep for now as CardService still throws it temporarily
+// import java.sql.SQLException; // Removed, no longer directly thrown or caught
 import java.util.Scanner;
 import java.util.List; // Explicitly import List
 
@@ -29,21 +29,21 @@ public class BoardMenu {
     }
 
     public void execute() {
-        try {
-            System.out.printf("Bem vindo ao board %s, selecione a operação desejada\n", entity.getId());
-            var option = -1;
-            while (option != 9) {
-                System.out.println("1 - Criar um card");
-                System.out.println("2 - Mover um card");
-                System.out.println("3 - Bloquear um card");
-                System.out.println("4 - Desbloquear um card");
-                System.out.println("5 - Cancelar um card");
-                System.out.println("6 - Ver board");
-                System.out.println("7 - Ver coluna com cards");
-                System.out.println("8 - Ver card");
-                System.out.println("9 - Voltar para o menu anterior"); // Removed "um card"
-                System.out.println("10 - Sair");
-                option = scanner.nextInt();
+        System.out.printf("Bem vindo ao board %s, selecione a operação desejada\n", entity.getId());
+        var option = -1;
+        while (option != 9) {
+            System.out.println("1 - Criar um card");
+            System.out.println("2 - Mover um card");
+            System.out.println("3 - Bloquear um card");
+            System.out.println("4 - Desbloquear um card");
+            System.out.println("5 - Cancelar um card");
+            System.out.println("6 - Ver board");
+            System.out.println("7 - Ver coluna com cards");
+            System.out.println("8 - Ver card");
+            System.out.println("9 - Voltar para o menu anterior");
+            System.out.println("10 - Sair");
+            option = scanner.nextInt();
+            try { // Centralized error handling
                 switch (option) {
                     case 1 -> createCard();
                     case 2 -> moveCardToNextColumn();
@@ -57,15 +57,14 @@ public class BoardMenu {
                     case 10 -> System.exit(0);
                     default -> System.out.println("Opção inválida, informe uma opção do menu");
                 }
+            } catch (RuntimeException ex) {
+                System.err.println("Ocorreu um erro: " + ex.getMessage());
+                // ex.printStackTrace(); // Optional: uncomment for detailed debugging
             }
-        }catch (RuntimeException ex){ // Catch RuntimeException from JDBI transactions
-            System.err.println("Ocorreu um erro: " + ex.getMessage());
-            ex.printStackTrace();
-            // System.exit(0); // Do not exit, allow user to try again or go back
         }
     }
 
-    private void createCard(){ // Removed SQLException
+    private void createCard(){
         var card = new CardEntity();
         System.out.println("Informe o título do card");
         card.setTitle(scanner.next());
@@ -75,20 +74,16 @@ public class BoardMenu {
         new CardService(jdbi).create(card); // Use Jdbi instance
     }
 
-    private void moveCardToNextColumn() { // Removed SQLException
+    private void moveCardToNextColumn() {
         System.out.println("Informe o id do card que deseja mover para a próxima coluna");
         var cardId = scanner.nextLong();
         var boardColumnsInfo = entity.getBoardColumns().stream()
                 .map(bc -> new BoardColumnInfoDTO(bc.getId(), bc.getOrder(), bc.getKind()))
                 .toList();
-        try{
-            new CardService(jdbi).moveToNextColumn(cardId, boardColumnsInfo); // Use Jdbi instance
-        } catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
+        new CardService(jdbi).moveToNextColumn(cardId, boardColumnsInfo); // Use Jdbi instance
     }
 
-    private void blockCard() { // Removed SQLException
+    private void blockCard() {
         System.out.println("Informe o id do card que será bloqueado");
         var cardId = scanner.nextLong();
         System.out.println("Informe o motivo do bloqueio do card");
@@ -96,40 +91,28 @@ public class BoardMenu {
         var boardColumnsInfo = entity.getBoardColumns().stream()
                 .map(bc -> new BoardColumnInfoDTO(bc.getId(), bc.getOrder(), bc.getKind()))
                 .toList();
-        try{
-            new CardService(jdbi).block(cardId, reason, boardColumnsInfo); // Use Jdbi instance
-        } catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
+        new CardService(jdbi).block(cardId, reason, boardColumnsInfo); // Use Jdbi instance
     }
 
-    private void unblockCard() { // Removed SQLException
+    private void unblockCard() {
         System.out.println("Informe o id do card que será desbloqueado");
         var cardId = scanner.nextLong();
         System.out.println("Informe o motivo do desbloqueio do card");
         var reason = scanner.next();
-        try{
-            new CardService(jdbi).unblock(cardId, reason); // Use Jdbi instance
-        } catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
+        new CardService(jdbi).unblock(cardId, reason); // Use Jdbi instance
     }
 
-    private void cancelCard() { // Removed SQLException
+    private void cancelCard() {
         System.out.println("Informe o id do card que deseja mover para a coluna de cancelamento");
         var cardId = scanner.nextLong();
         var cancelColumn = entity.getCancelColumn();
         var boardColumnsInfo = entity.getBoardColumns().stream()
                 .map(bc -> new BoardColumnInfoDTO(bc.getId(), bc.getOrder(), bc.getKind()))
                 .toList();
-        try{
-            new CardService(jdbi).cancel(cardId, cancelColumn.getId(), boardColumnsInfo); // Use Jdbi instance
-        } catch (RuntimeException ex){
-            System.out.println(ex.getMessage());
-        }
+        new CardService(jdbi).cancel(cardId, cancelColumn.getId(), boardColumnsInfo); // Use Jdbi instance
     }
 
-    private void showBoard() { // Removed SQLException
+    private void showBoard() {
         var optional = new BoardQueryService(jdbi).showBoardDetails(entity.getId()); // Use Jdbi instance
         optional.ifPresent(b -> {
             System.out.printf("Board [%s,%s]\n", b.id(), b.name());
@@ -139,7 +122,7 @@ public class BoardMenu {
         });
     }
 
-    private void showColumn() { // Removed SQLException
+    private void showColumn() {
         var columnsIds = entity.getBoardColumns().stream().map(BoardColumnEntity::getId).toList();
         var selectedColumnId = -1L;
         while (!columnsIds.contains(selectedColumnId)){
@@ -155,7 +138,7 @@ public class BoardMenu {
         });
     }
 
-    private void showCard() { // Removed SQLException
+    private void showCard() {
         System.out.println("Informe o id do card que deseja visualizar");
         var selectedCardId = scanner.nextLong();
         new CardQueryService(jdbi).findById(selectedCardId) // Use Jdbi instance
